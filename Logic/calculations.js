@@ -44,3 +44,22 @@ function volumeTotal() {
 
   document.getElementById("totalVolume").innerHTML = totalVolume + cubed;
 }
+
+function equipmentSurface() {
+  lengthEquipment = document.getElementById("length-equipment").value;
+  widthEquipment = document.getElementById("width-equipment").value;
+
+  surfaceArea = lengthEquipment * widthEquipment;
+
+  document.getElementById("areaEquipment").innerHTML = surfaceArea + squared;
+}
+
+function equipmentVolume() {
+  lengthEquipment = document.getElementById("length-equipment").value;
+  widthEquipment = document.getElementById("width-equipment").value;
+  heightEquipment = document.getElementById("height-equipment").value;
+
+  volume = lengthEquipment * widthEquipment * heightEquipment;
+
+  document.getElementById("volumeEquipment").innerHTML = volume + cubed;
+}

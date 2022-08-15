@@ -13,6 +13,7 @@ function hidefield() {
   document.getElementById("wallData6").style.display = "none";
   document.getElementById("warehouse-temperature").style.display = "none";
   document.getElementById("storagetype").style.display = "none";
+  document.getElementById("equipment-dimensions").style.display = "none";
 }
 
 function displayFloor() {
@@ -157,3 +158,17 @@ function displayWarehouse() {
     document.getElementById("storagetype").style.display = "block";
   }
 }
+
+function displayEquipment() {
+  var val = document.getElementById("radioequipment");
+
+  console.log(val.elements["radioEquipment"].value);
+
+  if (val.elements["radioEquipment"].value == "yes") {
+    document.getElementById("equipment-dimensions").style.display = "block";
+  } else {
+    document.getElementById("equipment-dimensions").style.display = "none";
+  }
+}
+
+function validation() {}

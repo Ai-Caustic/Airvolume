@@ -125,7 +125,7 @@
               </td>
               <td>
                 <input class="form-control w-50" onchange="roomSurface()" type="number" id="lengthRoom" class="input"
-                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" />
+                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" required/>
               </td>
 
             </tr>
@@ -135,7 +135,7 @@
               </td>
               <td>
                 <input class="form-control w-50" onchange="roomSurface()" type="number" id="widthRoom" class="input"
-                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" />
+                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
               </td>
             </tr>
             <tr>
@@ -144,7 +144,7 @@
               </td>
               <td>
                 <input class="form-control w-50" onchange="roomVolume()" type="number" id="heightRoom" class="input"
-                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" />
+                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" required/>
               </td>
             </tr>
             <tr>
@@ -202,7 +202,7 @@
                 </td>
                 <td>
                   <input class="form-control w-50" onchange="falseFloor()" type="number" id="heightFloor" class="input"
-                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" />
+                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
                 </td>
               </tr>
               <tr>
@@ -210,7 +210,7 @@
                   <p>Volume (floor)</p>
                 </td>
                 <td>
-                  <span class="output" id="volumeFloor"></span>
+                  <span class="output" id="volumeFloor" ></span>
                 </td>
               </tr>
             </table>
@@ -247,7 +247,7 @@
             </td>
             <td>
               <input class="form-control w-50" onchange="ceiling()" type="number" id="heightCeiling" class="input"
-                placeholder="0.00" min="0" oninput="validity.valid||(value='');" />
+                placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
             </td>
           </tr>
           <tr>
@@ -306,7 +306,6 @@
       </div>
     </div>
     <div class="circulation">
-
       <form class="checkbox" id="radiocirculation">
         <p>Ventilation Type:</p>
         <label><input onclick="displayVolume()" type="radio" name="radioCirculation" id="yes"
@@ -327,7 +326,7 @@
               </td>
               <td>
                 <input class="form-control w-50" type="number" id="volAir" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" />
+                  oninput="validity.valid||(value='');" required />
               </td>
             </tr>
           </table>
@@ -365,7 +364,7 @@
             </td>
             <td>
               <input class="form-control w-50" type="number" id="conditionerPower" class="input" placeholder="0.00"
-                min="0" oninput="validity.valid||(value='');" />
+                min="0" oninput="validity.valid||(value='');" required />
             </td>
           </tr>
         </table>
@@ -425,7 +424,7 @@
               </td>
               <td>
                 <input onchange="displayLayers()" class="form-control w-50" type="number" id="wall-layers" class="input"
-                  min="1" max="20" required oninput="validity.valid||(value='');" placeholder="0" />
+                  min="1" max="20" required oninput="validity.valid||(value='');" placeholder="0" required/>
               </td>
             </tr>
 
@@ -440,7 +439,7 @@
         </div>
           <div class="card-body">
             <div class="card-text">
-              <p>Give the following Data for the wall layers upto the 6(th) layer. (If Null input zero)</p>
+              <p>Give the following Data for the wall layers upto the 6(th) layer. (If Null leave blank)</p>
             </div>
           </div>
         </div>
@@ -459,7 +458,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
             <tr>
@@ -467,7 +466,7 @@
                 <p>Volume(m3)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');">
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -478,7 +477,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -489,7 +488,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -509,7 +508,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
             <tr>
@@ -517,7 +516,7 @@
                 <p>Volume(m3)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');">
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -528,7 +527,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -539,7 +538,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -559,7 +558,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
             <tr>
@@ -567,7 +566,7 @@
                 <p>Volume(m3)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');">
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -578,7 +577,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -589,7 +588,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -609,7 +608,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
             <tr>
@@ -617,7 +616,7 @@
                 <p>Volume(m3)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');">
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -628,7 +627,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -639,7 +638,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -659,7 +658,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
             <tr>
@@ -667,7 +666,7 @@
                 <p>Volume(m3)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');">
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -678,7 +677,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -689,7 +688,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -709,7 +708,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
             <tr>
@@ -717,7 +716,7 @@
                 <p>Volume(m3)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');">
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -728,7 +727,7 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
@@ -739,13 +738,90 @@
                 <p>Surface Area(m2)</p>
               </td>
               <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"></i>
+                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
           </table>
         </div>
       </div>
     </div>
+    <div class="equipment">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Equipment room</h3>
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <p>Does the storage have an equipment room?</p>
+          </div>
+          <form class="checkbox" id="radioequipment">
+            <label><input onclick="displayEquipment()" type="radio" name="radioEquipment" id="yes"
+                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label><input onclick="displayEquipment()" type="radio" name="radioEquipment" id="no"
+                value="no" />No</label>
+          </form>
+        </div>
+      </div>
+
+      
+
+    </div>
+    <div class="equipment-dimensions" id="equipment-dimensions">
+      <div class="card text-center">
+        <div class="card-header">
+          <h2>Dimensions</h2>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <tr>
+              <td>
+                <p>Length(m): </p>
+              </td>
+              <td>
+                <input class="form-control w-50" onchange="equipmentSurface()" type="number" id="length-equipment" class="input"
+                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" required/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Width(m):</p>
+              </td>
+              <td>
+                <input class="form-control w-50" onchange="equipmentSurface()" type="number" id="width-equipment" class="input"
+                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Height(m):</p>
+              </td>
+              <td>
+                <input class="form-control w-50" onchange="equipmentVolume()" type="number" id="height-equipment" class="input"
+                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Surface Area (Equipment room) </p>
+              </td>
+              <td>
+                <span class="output" id="areaEquipment"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Volume (Equipment room) </p>
+              </td>
+              <td>
+                <span class="output" id="volumeEquipment"/></span>
+              </td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+    </div>
+
   </div>
   <script src="inputs.js"></script>
   <script src="calculations.js"></script>

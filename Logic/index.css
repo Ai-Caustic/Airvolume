@@ -35,6 +35,16 @@
   background-color: white;
 }
 
-.form-control {
+body input {
   background-color: rgb(223, 219, 211) !important;
+  color: black;
+}
+
+input:valid {
+  content: "✓" !important;
+  color: green !important;
+  background-color: wheat !important;
+  border: solid limegreen !important;
+  border-radius: 5px;
+  accent-color: gold;
 }
