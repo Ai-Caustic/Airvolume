@@ -14,6 +14,8 @@ function hidefield() {
   document.getElementById("warehouse-temperature").style.display = "none";
   document.getElementById("storagetype").style.display = "none";
   document.getElementById("equipment-dimensions").style.display = "none";
+  document.getElementById("temperature").style.display = "none";
+  document.getElementById("storageType").style.display = "none";
 }
 
 function displayFloor() {
@@ -152,10 +154,12 @@ function displayWarehouse() {
 
   if (val.elements["radioWarehouse"].value == "yes") {
     document.getElementById("warehouse-temperature").style.display = "block";
+    document.getElementById("temperature").style.display = "block";
     document.getElementById("storagetype").style.display = "none";
   } else {
     document.getElementById("warehouse-temperature").style.display = "none";
     document.getElementById("storagetype").style.display = "block";
+    document.getElementById("temperature").style.display = "none";
   }
 }
 
@@ -171,4 +175,14 @@ function displayEquipment() {
   }
 }
 
-function validation() {}
+function displayStorage() {
+  var val = document.getElementById("radiostorage");
+
+  console.log(val.elements["radioStorage"].value);
+
+  if (val.elements["radioStorage"].value == "yes") {
+    document.getElementById("storageType").style.display = "block";
+  } else {
+    document.getElementById("storageType").style.display = "none";
+  }
+}
