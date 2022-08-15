@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="calendar.css" />
+  </head>
+
+  <body>
+    <br />
+    <br />
+    <br />
+    <div>
+      <table
+        id="table_hours"
+        cellspacing="10"
+        cellpadding="5"
+        border="3"
+        class="calendar"
+      >
+        <tr class="blank_row">
+          <td rowspan="27">Blank</td>
+
+          <td colspan="8">Week</td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td>Monday</td>
+          <td>Tuesday</td>
+          <td>Wednesday</td>
+          <td>Thursday</td>
+          <td>Friday</td>
+          <td>Saturday</td>
+          <td>Sunday</td>
+        </tr>
+
+        <tr>
+          <td class="hrs">0 - 1</td>
+          <td>
+            <input
+              class="hours"
+              name="monday"
+              id="monday1"
+              type="number"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday1" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday1"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday1" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday1" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              type="number"
+              id="saturday1"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday1" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td class="hrs">1 - 2</td>
+          <td>
+            <input
+              id="monday2"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday2" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday2"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday2" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday2" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input id="saturday2" type="number" class="hours" name="saturday" />
+          </td>
+          <td>
+            <input id="sunday2" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">2 - 3</td>
+          <td>
+            <input
+              id="monday3"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday3" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday3"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday3" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday3" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input id="saturday3" type="number" class="hours" name="saturday" />
+          </td>
+          <td>
+            <input id="sunday3" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">4 - 5</td>
+          <td>
+            <input
+              id="monday4"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday4" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday4"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday4" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday4" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input id="saturday4" type="number" class="hours" name="saturday" />
+          </td>
+          <td>
+            <input id="sunday4" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">5 - 6</td>
+          <td>
+            <input
+              id="monday5"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday5" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday5"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday5" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday5" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input id="saturday5" type="number" class="hours" name="saturday" />
+          </td>
+          <td>
+            <input id="sunday5" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">6 - 7</td>
+          <td>
+            <input
+              id="monday6"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday6" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday6"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday6" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday6" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input id="saturday6" type="number" class="hours" name="saturday" />
+          </td>
+          <td>
+            <input id="sunday6" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">7 - 8</td>
+          <td>
+            <input
+              id="monday7"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday7" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday7"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday7" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday7" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input id="saturday7" type="number" class="hours" name="saturday" />
+          </td>
+          <td>
+            <input id="sunday7" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">8 - 9</td>
+          <td>
+            <input
+              id="monday8"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday8" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday8"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday8" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday8" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input id="saturday8" type="number" class="hours" name="saturday" />
+          </td>
+          <td>
+            <input id="sunday8" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">9 - 10</td>
+          <td>
+            <input
+              id="monday9"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday9" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday9"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input id="thursday9" type="number" class="hours" name="thursday" />
+          </td>
+          <td>
+            <input id="friday9" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input id="saturday9" type="number" class="hours" name="saturday" />
+          </td>
+          <td>
+            <input id="sunday9" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">10 - 11</td>
+          <td>
+            <input
+              id="monday10"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday10" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday10"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday10"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday10" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday10"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday10" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">11 - 12</td>
+          <td>
+            <input
+              id="monday11"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday11" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday11"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday11"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday11" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday11"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday11" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">12 - 13</td>
+          <td>
+            <input
+              id="monday12"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday12" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday12"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday12"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday12" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday12"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday12" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">13 - 14</td>
+          <td>
+            <input
+              id="monday13"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday13" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday13"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday13"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday13" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday13"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday13" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">14 - 15</td>
+          <td>
+            <input
+              id="monday14"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday14" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday14"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday14"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday14" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday14"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday14" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">15 - 16</td>
+          <td>
+            <input
+              id="monday15"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday15" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday15"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday15"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday15" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday15"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday15" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">16 - 17</td>
+          <td>
+            <input
+              id="monday16"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday16" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday16"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday16"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday16" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday16"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday16" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">17 - 18</td>
+          <td>
+            <input
+              id="monday17"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday17" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday17"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday17"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday17" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday17"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday17" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">18 - 19</td>
+          <td>
+            <input
+              id="monday18"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday18" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday18"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday18"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday18" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday18"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday18" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">19 - 20</td>
+          <td>
+            <input
+              id="monday19"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday19" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday19"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday19"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday19" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday19"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday19" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">20 - 21</td>
+          <td>
+            <input
+              id="monday20"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday20" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday20"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday20"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday20" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday20"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday20" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">21 - 22</td>
+          <td>
+            <input
+              id="monday21"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday21" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday21"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday21"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday21" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday21"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday21" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">22 - 23</td>
+          <td>
+            <input
+              id="monday22"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday22" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday22"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday22"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday22" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday22"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday22" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+        <tr>
+          <td class="hrs">23 - 24</td>
+          <td>
+            <input
+              id="monday23"
+              type="number"
+              class="hours"
+              name="monday"
+              value="0"
+            />
+          </td>
+          <td>
+            <input id="tuesday23" type="number" class="hours" name="tuesday" />
+          </td>
+          <td>
+            <input
+              id="wednesday23"
+              type="number"
+              class="hours"
+              name="wednesday"
+            />
+          </td>
+          <td>
+            <input
+              id="thursday23"
+              type="number"
+              class="hours"
+              name="thursday"
+            />
+          </td>
+          <td>
+            <input id="friday23" type="number" class="hours" name="friday" />
+          </td>
+          <td>
+            <input
+              id="saturday23"
+              type="number"
+              class="hours"
+              name="saturday"
+            />
+          </td>
+          <td>
+            <input id="sunday23" type="number" class="hours" name="sunday" />
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <p>
+      Monday Total :<button onclick="mondayTotal(event)">Click</button
+      ><span></span>
+    </p>
+    <div class="Total">
+      <table border="3">
+        <tr>
+          <td>Hours of Operation per day</td>
+          <td><span id="totalMonday"></span></td>
+          <td><span id="totalTuesday"></span></td>
+          <td><span id="totalWednesday"></span></td>
+          <td><span id="totalThursday"></span></td>
+          <td><span id="totalFriday"></span></td>
+          <td><span id="totalSaturday"></span></td>
+          <td><span id="totalSunday"></span></td>
+        </tr>
+        <tr>
+          <td>Average Openings(per operational hour)</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script src="calendar.js"></script>
+</html>

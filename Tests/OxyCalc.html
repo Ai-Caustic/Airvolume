@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>Template</title>
+  </head>
+
+  <body>
+    <div class="workarea">
+      <div class="projectData">
+        <h2>Project Data</h2>
+
+        <p>Client <input type="text" id="client" /></p>
+        <p>Project name <input type="text" id="projectName" /></p>
+        <p>Location <input type="text" id="location" /></p>
+        <p>City <input type="text" id="city" /></p>
+        <p>Country <input type="text" id="country" /></p>
+      </div>
+
+      <div class="protectedArea">
+        <h2>Protected Area</h2>
+        <form action="#" class="">
+          <label for="warehouse">Warehouse: </label>
+          <select name="warehouse" id="warehouse0">
+            <option value="ambient">Ambient</option>
+            <option value="freeze">Freeze</option>
+          </select>
+          <input type="submit" value="Submit" />
+        </form>
+        <div class="checkbox">
+          <form>
+            <input type="radio" name="radio" id="archive" value="archive" />
+            <label for="archive">Archive</label>
+            <input type="radio" name="radio" id="itCenter" value="itCenter" />
+            <label for="itCenter">It Center</label>
+            <input type="radio" name="radio" id="library" value="library" />
+            <label for="library">Library</label>
+          </form>
+        </div>
+      </div>
+      <div class="area">
+        <h3>Area</h3>
+        <div>
+          <table class="table" border="3">
+            <tr>
+              <td>
+                <p>Area Name</p>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="areaName"
+                  placeholder="High Bay Warehouse"
+                  class="input"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Floor</p>
+              </td>
+              <td>
+                <input type="number" id="floor" placeholder="0" class="input" />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="roomTightness">
+        <h3>Room Tightness:</h3>
+        <div>
+          <table class="table" border="3">
+            <tr>
+              <td>
+                <p>Year of construction</p>
+              </td>
+              <td>
+                <input type="text" id="constructionYear" placeholder="0" class="input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>n50-value  [ ISO 9972; 1/h]:	
+                </p>
+              </td>
+              <td>
+                <input type="text" id="n50Value" placeholder="< 0.00 h" class="input"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Number of external walls(also ceiling if adjoining to the exterior)</p>
+              </td>
+              <td>
+                <input type="text" id="externalWalls" placeholder="0" class="input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Shielding of the building (none, average or strong)</p>
+              </td>
+              <td>
+                <input type="text" id="Shielding" placeholder="None" class="input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Temperature inside the protected area(°C)</p>
+              </td>
+              <td>
+                <input type="text" id="protectedTemp" placeholder="0.0" class="input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Temperature inside the equipment room(°C)</p>
+              </td>
+              <td>
+                <input type="text" id="equipmentTemp" placeholder="0.0" class="input" />
+              </td>
+            </tr>
+          </table>
+        </div>
+    
+      </div>
+      <div class="Access">
+        <h3>Access / Loading: </h3>
+        <div>
+          <table class="table" border="3">
+            <tr>
+              <td>
+                <p>Access Type: (door or double door = SAS)</p>
+              </td>
+              <td>
+                <input type="text" id="accessType" class="input"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Quantity:</p>
+              </td>
+              <td>
+                <input type="text" id="Quantity" placeholder="0" class="input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Opening area(m2): </p>
+              </td>
+              <td>
+                <input type="text" id="openingArea__" placeholder="0.00" class="input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>If SAS then SAS volume(m3)</p>
+              </td>
+              <td>
+                <input type="text" id="sasVolume__" placeholder="0.00" class="input" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Opening duration(sec)</p>
+              </td>
+              <td>
+                <input type="text" id="openDuration" placeholder="0s" class="input" />
+              </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+  </body>
+</html>
