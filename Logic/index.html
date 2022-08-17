@@ -900,6 +900,143 @@
         </div>
       </div>
     </div>
+    <div class="openings">
+      <div class="card text-center">
+        <div class="card-header">
+          <h3>Opening Hours</h3>
+        </div>
+        <div class="card-text">
+          <p>Hours of operation per day</p>
+        </div>
+        <div class="card-body" id="open-hours">
+          <table class="table">
+            <tr>
+              <td>
+                <p>Monday</p>
+              </td>
+              <td>
+                <input onchange="" class="form-control w-50" type="number" id="monday" class="input"
+                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+              </td>
+              </tr>
+              <tr>
+              <td>
+                <p>Tuesday</p>
+              </td>
+              <td>
+                <input onchange="" class="form-control w-50" type="number" id="tuesday" class="input"
+                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+              </td>
+              </tr>
+              <tr>
+              <td>
+                <p>Wednesday</p>
+              </td>
+              <td>
+                <input onchange="" class="form-control w-50" type="number" id="wednesday" class="input"
+                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+              </td>
+              </tr>
+              <tr>
+              <td>
+                <p>Thursday</p>
+              </td>
+              <td>
+                <input onchange="" class="form-control w-50" type="number" id="thursday" class="input"
+                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+              </td>
+              </tr>
+              <tr>
+              <td>
+                <p>Friday</p>
+              </td>
+              <td>
+                <input onchange="" class="form-control w-50" type="number" id="friday" class="input"
+                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+              </td>
+              </tr>
+              <tr>
+              <td>
+                <p>Saturday</p>
+              </td>
+              <td>
+                <input onchange="" class="form-control w-50" type="number" id="saturday" class="input"
+                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+              </td>
+              </tr>
+              <tr>
+              <td>
+                <p>Sunday</p>
+              </td>
+              <td>
+                <input onchange="" class="form-control w-50" type="number" id="sunday" class="input"
+                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+              </td>
+            </tr>
+          </table>
+          <div class="card-text">
+            <p>Average openings(per operation hour)</p>
+          </div>
+          <table class="table">
+            <tr>
+              <td>
+                <p>Monday</p>
+              </td>
+              <td>
+                <span class="output" id="avgMonday"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Tuesday</p>
+              </td>
+              <td>
+                <span class="output" id="avgTuesday"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Wednesday</p>
+              </td>
+              <td>
+                <span class="output" id="avgWednesday"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Thursday</p>
+              </td>
+              <td>
+                <span class="output" id="avgThursday"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Friday</p>
+              </td>
+              <td>
+                <span class="output" id="avgFriday"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Saturday</p>
+              </td>
+              <td>
+                <span class="output" id="avgSaturday"></span>
+              </td>
+            </tr>
+            <td>
+              <p>Sunday</p>
+            </td>
+            <td>
+              <span class="output" id="avgSunday"></span>
+            </td>
+          </table>
+        </div>
+      </div>
+    </div>
+    <input class="btn btn-outline-info" onclick="avgOpenings()" type="button" value="Calculate Average Openings"></input>
 
   </div>
   <script src="inputs.js"></script>
@@ -908,5 +1045,4 @@
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
 </body>
-
 </html>

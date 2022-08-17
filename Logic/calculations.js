@@ -63,3 +63,31 @@ function equipmentVolume() {
 
   document.getElementById("volumeEquipment").innerHTML = volume + cubed;
 }
+
+function avgOpenings() {
+  var monday = document.getElementById("monday").value;
+  var tuesday = document.getElementById("tuesday").value;
+  var wednesday = document.getElementById("wednesday").value;
+  var thursday = document.getElementById("thursday").value;
+  var friday = document.getElementById("friday").value;
+  var saturday = document.getElementById("saturday").value;
+  var sunday = document.getElementById("sunday").value;
+
+  var avgMonday = monday / 24;
+  var avgTuesday = tuesday / 24;
+  var avgWednesday = wednesday / 24;
+  var avgThursday = thursday / 24;
+  var avgFriday = friday / 24;
+  var avgSaturday = saturday / 24;
+  var avgSunday = sunday / 24;
+
+  console.log(avgMonday.toFixed(4));
+
+  document.getElementById("avgMonday").innerHTML = avgMonday.toFixed(4);
+  document.getElementById("avgTuesday").innerHTML = avgTuesday.toFixed(4);
+  document.getElementById("avgWednesday").innerHTML = avgWednesday.toFixed(4);
+  document.getElementById("avgThursday").innerHTML = avgThursday.toFixed(4);
+  document.getElementById("avgFriday").innerHTML = avgFriday.toFixed(4);
+  document.getElementById("avgSaturday").innerHTML = avgSaturday.toFixed(4);
+  document.getElementById("avgSunday").innerHTML = avgSunday.toFixed(4);
+}

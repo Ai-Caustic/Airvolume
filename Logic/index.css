@@ -43,7 +43,7 @@ body input {
 input:valid {
   content: "✓" !important;
   color: green !important;
-  background-color: wheat !important;
+  background-color: rgb(223, 219, 211) !important;
   border: solid limegreen !important;
   border-radius: 5px;
   accent-color: black;
