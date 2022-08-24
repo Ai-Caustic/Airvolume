@@ -8,11 +8,19 @@
   <link rel="Stylesheet" href="index.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 
 <body onload="hidefield()" class="body">
   <div class="document text-center">
+
+    <div class="section1" id="section1">
     <div class="generalData">
       <div class="card">
         <div class="card-header">
@@ -71,20 +79,26 @@
         </div>
       </div>
     </div>
+    <button onclick="change1()" type="button" class="btn btn-primary">Next</button>
+    <button onclick="" type="button" class="btn btn-primary">Test Button</button>
+    
+  </div>
+
+<div class="section2" id="section2">
     <div class="protectedArea">
       <div class="card">
         <div class="card-header">
-          <h3>Warehouse</h3>
+          <h3>Protected Area</h3>
         </div>
         <div class="cardbody">
           <div class="card-text">
-            <p> Is the storage a warehouse?</p>
+            <p> Storage Type? </p>
           </div>
           <form class="checkbox" id="radiowarehouse">
-            <label><input onclick="displayWarehouse()" type="radio" name="radioWarehouse" id="yes"
-                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label><input onclick=" displayWarehouse()" type="radio" name="radioWarehouse" id="no"
-                value="no" />No</label>
+            <label><input onclick="displayWarehouse()"  type="radio" name="radioWarehouse" id="warehouse" value="warehouse" />Warehouse</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label><input onclick="displayWarehouse()"  type="radio" name="radioWarehouse" id="archive" value="archive" />Archive</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label> <input onclick="displayWarehouse()" type="radio" name="radioWarehouse" id="IT" value="IT" />IT-Center</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label> <input onclick="displayWarehouse()" type="radio" name="radioWarehouse" id="library" value="library" />Library</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
           </form>
           <br />
           <div class="card-text" id="warehouse-temperature">
@@ -95,69 +109,88 @@
                 <option value="freeze">Freeze</option>
               </select>
             </form>
-            <br />
+            <br/>
           </div>
-          <div class="temperature" id="temperature">
+          <div class="temperature" id="temperatureWarehouse">
             <table class="table">
               <tr>
                 <td>
                   <p>Temperature(°C)</p>
                 </td>
-
                 <td>
-                  <input class="form-control w-50" oninput="displayWarehouse()" type="number" id="temperature"
+                  <input class="form-control w-50" oninput="" type="number" id="temperature"
                     class="input" placeholder="0" min="0" oninput="validity.valid||(value='');" required />
                 </td>
                 <td>
                   <p>N-50 value</p>
                 </td>
                 <td>
-                  <input class="form-control w-50" oninput="displayWarehouse()" type="number" id="temperature"
+                  <input class="form-control w-50" oninput="" type="number" id="n50"
                     class="input" placeholder="0" min="0" oninput="validity.valid||(value='');" required />
                 </td>
               </tr>
-
             </table>
-          </div>
-          <div class="checkbox" id="storagetype">
-            <div class="card-text">
-              <p>Select the storage type:</p>
-            </div>
-            <form>
-              <input type="radio" name="radio" id="archive" value="archive" />
-              <label for="archive">Archive</label> &nbsp;&nbsp;&nbsp;
-              <input type="radio" name="radio" id="itCenter" value="itCenter" />
-              <label for="itCenter">It Center</label> &nbsp;&nbsp;&nbsp;
-              <input type="radio" name="radio" id="library" value="library" />
-              <label for="library">Library</label> &nbsp;&nbsp;&nbsp;
-            </form>
           </div>
         </div>
       </div>
     </div>
+    <button onclick="revert1()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change2()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+  <div class="section3" id="section3">
     <div class="Room">
       <div class="card text-center w-100">
         <div class="card-header">
           <h3>Room (Without False Floor/Ceiling)</h3>
         </div>
         <div class="card-body">
+          <div>
+            <form class="checkbox" id="radioroom">
+              <label><input onclick="displayRoom()" type="radio" name="radioRoom" id="yes" value="manually" />Manually</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label><input onclick="displayRoom()" type="radio" name="radioRoom" id="yes" value="compute" />Compute</label>
+            </form>
+            <br/>
+          </div>
+          <div class="manualroom" id="manualroom">
+            <table class="table">
+              <tr>
+                <td>
+                  <p>Surface Area: </p>
+                </td>
+                <td>
+                  <input class="form-control w-50" oninput="volumeTotal()" type="number" id="areaRoom1" class="input"
+                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume:</p>
+                </td>
+                <td>
+                  <input class="form-control w-50" oninput="volumeTotal()" type="number" id="volumeRoom1" class="input"
+                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" oninput="volumeTotal()" required />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="tableroom">
           <table class="table">
             <tr>
               <td>
                 <p>Length(m): </p>
               </td>
               <td>
-                <input class="form-control w-50" onchange="roomSurface()" type="number" id="lengthRoom" class="input"
+                  <input class="form-control w-50" oninput="volumeTotal()" onchange="roomSurface()" type="number" id="lengthRoom" class="input"
                   placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
               </td>
-
             </tr>
             <tr>
               <td>
                 <p>Width(m):</p>
               </td>
               <td>
-                <input class="form-control w-50" onchange="roomSurface()" type="number" id="widthRoom" class="input"
+                <input class="form-control w-50" oninput="volumeTotal()" onchange="roomSurface()" type="number" id="widthRoom" class="input"
                   placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
               </td>
             </tr>
@@ -166,8 +199,8 @@
                 <p>Height(m):</p>
               </td>
               <td>
-                <input class="form-control w-50" onchange="roomVolume()" type="number" id="heightRoom" class="input"
-                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                <input class="form-control w-50" oninput="volumeTotal()" onchange="roomVolume()" type="number" id="heightRoom" class="input"
+                  placeholder="0.00" min="0" oninput="validity.valid||(value='');"  required />
               </td>
             </tr>
             <tr>
@@ -183,22 +216,25 @@
                 <p>Volume (room) </p>
               </td>
               <td>
-                <span class="output" id="volumeRoom" /></span>
+                <span class="output" id="volumeRoom" onchange="volumeTotal1()"/></span>
               </td>
             </tr>
           </table>
         </div>
+        </div>
 
       </div>
     </div>
+    <button onclick="revert2()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick = "change3()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+    <div class="section4" id="section4">
     <div class="floor">
       <div class="card text-center">
-
         <div class="card-header">
           <h3>False floor (additional)</h3>
         </div>
-
-
         <div class="card-text">
           <p>Is false floor Present?</p>
         </div>
@@ -224,7 +260,7 @@
                   <p>Height(m): </p>
                 </td>
                 <td>
-                  <input class="form-control w-50" onchange="falseFloor()" type="number" id="heightFloor" class="input"
+                  <input class="form-control w-50" oninput="volumeTotal()" onchange="falseFloor()" type="number" id="heightFloor" class="input"
                     placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
                 </td>
               </tr>
@@ -233,7 +269,7 @@
                   <p>Volume (floor)</p>
                 </td>
                 <td>
-                  <span class="output" id="volumeFloor"></span>
+                  <span class="output" id="volumeFloor" onchange="volumeTotal1()"></span>
                 </td>
               </tr>
             </table>
@@ -241,6 +277,11 @@
         </div>
       </div>
     </div>
+    <button onclick="revert3()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change4()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+  <div class="section5" id="section5">
     <div class="ceiling">
       <div class="card text-center">
         <div class="card-header">
@@ -269,7 +310,7 @@
                 <p>Height(m): </p>
               </td>
               <td>
-                <input class="form-control w-50" onchange="ceiling()" type="number" id="heightCeiling" class="input"
+                <input class="form-control w-50" oninput="volumeTotal()" onchange="ceiling()" type="number" id="heightCeiling" class="input"
                   placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
               </td>
             </tr>
@@ -278,7 +319,7 @@
                 <p>Volume (Ceiling)</p>
               </td>
               <td>
-                <span class="output" id="volumeCeiling" /></span>
+                <span class="output" id="volumeCeiling" onchange="volumeTotal1()" /></span>
               </td>
             </tr>
           </table>
@@ -286,9 +327,13 @@
       </div>
 
     </div>
+    <button onclick="revert4()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change5()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+    <div class="section6" id="section6">
     <div class="totVolume" id="totVolume">
       <div class="card text-center">
-
         <div class="card-header">
           <h3>Total Volume</h3>
         </div>
@@ -296,9 +341,12 @@
           <table class="table">
             <tr>
               <td id="volumetotal">
-                <input class="btn btn-outline-info" type="button" class="button" onclick="volumeTotal()"
-                  value="Calculate Total Volume" />
+                <p>Total Volume: </p>
               </td>
+              <!-- <td>
+                <input class="form-control w-50" oninput="volumeTotal(this)" type="number" id="totalVolumeresults" class="input"
+                  placeholder="0.00" min="0" required />
+              </td> -->
             </tr>
             <tr>
               <td>
@@ -310,6 +358,11 @@
       </div>
 
     </div>
+    <button onclick="revert5()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change6()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+  <div class="section7" id="section7">
     <div class="ventilation">
       <div class="card text-center">
         <div class="card-header">
@@ -357,43 +410,11 @@
         </div>
       </div>
     </div>
-    <div class="conditioner">
-      <div class="card text-center">
+    <button onclick="revert6()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change7()" type="button" class="btn btn-primary">Next</button>
+  </div>
 
-        <div class="card-header">
-          <h3>Air conditioner</h3>
-        </div>
-        <div class="card-text">
-          <p>Is conditioner present?</p>
-        </div>
-        <form class="checkbox" id="radioconditioner">
-          <label><input onclick="displayConditioner()" type="radio" name="radioConditioner" id="yes"
-              value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <label><input onclick="displayConditioner()" type="radio" name="radioConditioner" id="no"
-              value="no" />No</label>
-        </form>
-      </div>
-    </div>
-    <div class="conditionerpower" id="conditionerpower">
-      <div class="card text-center">
-        <div class="card-heading">
-          <h4>Power:</h4>
-        </div>
-        <div class="card-body">
-          <table class="table">
-            <tr>
-              <td>
-                <p>Conditioner Power Rating(kW)</p>
-              </td>
-              <td>
-                <input class="form-control w-50" type="number" id="conditionerPower" class="input" placeholder="0.00"
-                  min="0" oninput="validity.valid||(value='');" required />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
+  <div class="section8" id="section8">
     <div class="outsideWalls">
       <div class="card text-center">
         <div class="card-header">
@@ -416,10 +437,11 @@
             <label><input onclick="displayInsulation()" type="radio" name="radioWalls" id="wall4"
                 value="4" />4</label><br>
           </form>
+          <br>
           <div class="insulation" id="insulation">
 
             <div class="card-heading">
-              <h4>Insulation Type:</h4>
+              <h4>Shielding:</h4>
             </div>
 
             <form class="checkbox" id="insulationtype">
@@ -431,19 +453,124 @@
                   value="strong" />Strong</label>&nbsp;&nbsp;&nbsp;
             </form>
           </div>
+          <div class="windLoad">
+            <div class="card text-center">
+              <div class="card-header">
+                <h3>Wind Load/ Wind Protection</h3>
+              </div>
+              <div class="card-body">
+                <form class="checkbox" id="windload">
+                    <label><input type="radio" name="windLoad" id="windnone"
+                        value="none" />None</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="windLoad" id="windmiddle"
+                        value="middle" />Middle</label>&nbsp;&nbsp;&nbsp;
+                    <label><input type="radio" name="windLoad" id="windstrong"
+                        value="strong" />Strong</label>&nbsp;&nbsp;&nbsp;
+                  </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <button onclick="revert7()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change8()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+  <div class="section9" id="section9">
     <div class="wallLayers">
       <div class="card text-center">
         <div class="card-header">
-          <h3>Wall Layers</h3>
+          <h3>Openings (Sluice / Door / Door Fast Opening)</h3>
         </div>
         <div class="card-body">
+            <form class="checkbox" id="radioopenings">
+              <label><input onclick="displayOpenings()" type="radio" name="radioOpenings" id="sluice"
+                  value="sluice" />Sluice</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label><input onclick="displayOpenings()" type="radio" name="radioOpenings" id="door"
+                  value="door" />Door</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label><input onclick="displayOpenings()" type="radio" name="radioOpenings" id="doorFast"
+                  value="doorFast" />Door Fast Opening</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </form>
+          <br>
+          <form class="checkbox" id="sluicevolume">
+            <div class="card-text">
+              <p>Give volume manually?</p>
+            </div>
+            <label><input onclick="manualSluice()" type="radio" name="sluiceVolume" id=""
+                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label><input onclick="manualSluice()" type="radio" name="sluiceVolume" id=""
+                value="no" />No</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </form><br>
+          <div class="" id="manualSluice">
+            <table class="table">
+              <tr>
+                <td>
+                  <p>Volume(Sluice):</p>
+                </td>
+                <td>
+                  <input class="form-control w-50" onchange="" type="number" id="volumeSluice1" class="input"
+                    placeholder="0.00" min="0" oninput="validity.valid||(value='');"  required />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="" id="tableOpenings">
+            <table class="table">
+              <tr>
+                <td>
+                  <p>Width(m):</p>
+                </td>
+                <td>
+                  <input class="form-control w-50" onchange="" type="number" id="widthOpening" class="input"
+                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Height(m):</p>
+                </td>
+                <td>
+                  <input class="form-control w-50" onchange="" type="number" id="heightOpening" class="input"
+                    placeholder="0.00" min="0" oninput="validity.valid||(value='');"  required />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="" id="tableSluice">
+            <table class="table">
+              <tr>
+                <td>
+                  <p>Surface Area</p>
+                </td>
+                <td>
+                  <input class="form-control w-50" onchange="sluiceVolume()" type="number" id="surfaceSluice" class="input"
+                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Height(m):</p>
+                </td>
+                <td>
+                  <input class="form-control w-50" onchange="sluiceVolume()" type="number" id="heightSluice" class="input"
+                    placeholder="0.00" min="0" oninput="validity.valid||(value='');"  required />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume</p>
+                </td>
+                <td>
+                  <span class="output" id="volumeSluice" /></span>
+                </td>
+              </tr>
+            </table>
+          </div>
           <table class="table">
             <tr>
               <td>
-                <p>Wall Layers (1 - 20)</p>
+                <p>Openings (1 - 20)</p>
               </td>
               <td>
                 <input onchange="displayLayers()" class="form-control w-50" type="number" id="wall-layers" class="input"
@@ -455,23 +582,11 @@
         </div>
       </div>
     </div>
-    <div class="wallinfo" id="wallinfo">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Wall Data</h3>
-        </div>
-        <div class="card-body">
-          <div class="card-text">
-            <p>Give the following Data for the wall layers upto the 6(th) layer. (If Null leave blank)</p>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="wallData">
       <div class="card text-center" id="wallData1">
         <div class="card-body">
           <div class="card-heading">
-            <h2>Layer 1</h2>
+            <h2>Opening 1</h2>
             <br>
           </div>
           <table class="table">
@@ -525,7 +640,7 @@
       <div class="card text-center" id="wallData2">
         <div class="card-body">
           <div class="card-heading">
-            <h2>Layer 2</h2>
+            <h2>Opening 2</h2>
             <br>
           </div>
           <table class="table">
@@ -579,7 +694,7 @@
       <div class="card text-center" id="wallData3">
         <div class="card-body">
           <div class="card-heading">
-            <h2>Layer 3</h2>
+            <h2>Opening 3</h2>
             <br>
           </div>
           <table class="table">
@@ -633,7 +748,7 @@
       <div class="card text-center" id="wallData4">
         <div class="card-body">
           <div class="card-heading">
-            <h2>Layer 4</h2>
+            <h2>Opening 4</h2>
             <br>
           </div>
           <table class="table">
@@ -687,7 +802,7 @@
       <div class="card text-center" id="wallData5">
         <div class="card-body">
           <div class="card-heading">
-            <h2>Layer 5</h2>
+            <h2>Opening 5</h2>
             <br>
           </div>
           <table class="table">
@@ -741,7 +856,7 @@
       <div class="card text-center" id="wallData6">
         <div class="card-body">
           <div class="card-heading">
-            <h2>Layer 6</h2>
+            <h2>Opening 6</h2>
             <br />
           </div>
           <table class="table">
@@ -792,6 +907,11 @@
         </div>
       </div>
     </div>
+    <button onclick="revert8()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change9()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+<div class="section10" id="section10">
     <div class="equipment">
       <div class="card text-center">
         <div class="card-header">
@@ -809,9 +929,6 @@
           </form>
         </div>
       </div>
-
-
-
     </div>
     <div class="equipment-dimensions" id="equipment-dimensions">
       <div class="card text-center">
@@ -849,6 +966,15 @@
             </tr>
             <tr>
               <td>
+                <p>Temperature(°C)</p>
+              </td>
+              <td>
+                <input class="form-control w-50" onchange="" type="number" id="temp-equipment"
+                  class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <p>Surface Area (Equipment room) </p>
               </td>
               <td>
@@ -868,21 +994,24 @@
         </div>
       </div>
     </div>
+    <button onclick="revert9()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change10()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+  <div class="section11" id="section11">
     <div class="storage">
       <div class="card text-center">
         <div class="card-header">
-          <h3>Material Storage</h3>
+          <h3>Protected Material</h3>
         </div>
         <div class="card-body">
-          <div class="card-text">
-            <p>Are materials packed in cartons?</p>
-          </div>
           <form class="checkbox" id="radiostorage">
             <label><input onclick="displayStorage()" type="radio" name="radioStorage" id="yes"
                 value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <label><input onclick="displayStorage()" type="radio" name="radioStorage"" id="no"
                 value="no" />No</label>
           </form>
+          <br><br>
           <div class="storageType" id="storageType">
             <table class="table">
               <tr>
@@ -896,14 +1025,32 @@
               </tr>
             </table>
           </div>
-          
+          <br>
+          <div class="oxygenContent" id="oxygenContent">
+            <table class="table">
+              <tr>
+                <td>
+                  <p>Remaining Oxygen Content(10% - 21%)</p>
+                </td>
+                <td>
+                  <input class="form-control w-50" type="number" id="oxygenpercentage" class="input"
+                  min="10" max="21" required oninput="validity.valid||(value='');" placeholder="0" required />
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
+    <button onclick="revert10()" type="button" class="btn btn-warning">Previous</button>
+    <button onclick="change11()" type="button" class="btn btn-primary">Next</button>
+  </div>
+
+  <div class="section12" id="section12">
     <div class="openings">
       <div class="card text-center">
         <div class="card-header">
-          <h3>Opening Hours</h3>
+          <h3>Operating Hours</h3>
         </div>
         <div class="card-text">
           <p>Hours of operation per day</p>
@@ -915,8 +1062,8 @@
                 <p>Monday</p>
               </td>
               <td>
-                <input onchange="" class="form-control w-50" type="number" id="monday" class="input"
-                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="monday" class="input"
+                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
               </td>
               </tr>
               <tr>
@@ -924,8 +1071,8 @@
                 <p>Tuesday</p>
               </td>
               <td>
-                <input onchange="" class="form-control w-50" type="number" id="tuesday" class="input"
-                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="tuesday" class="input"
+                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
               </td>
               </tr>
               <tr>
@@ -933,8 +1080,8 @@
                 <p>Wednesday</p>
               </td>
               <td>
-                <input onchange="" class="form-control w-50" type="number" id="wednesday" class="input"
-                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="wednesday" class="input"
+                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
               </td>
               </tr>
               <tr>
@@ -942,8 +1089,8 @@
                 <p>Thursday</p>
               </td>
               <td>
-                <input onchange="" class="form-control w-50" type="number" id="thursday" class="input"
-                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="thursday" class="input"
+                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
               </td>
               </tr>
               <tr>
@@ -951,8 +1098,8 @@
                 <p>Friday</p>
               </td>
               <td>
-                <input onchange="" class="form-control w-50" type="number" id="friday" class="input"
-                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="friday" class="input"
+                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
               </td>
               </tr>
               <tr>
@@ -960,8 +1107,8 @@
                 <p>Saturday</p>
               </td>
               <td>
-                <input onchange="" class="form-control w-50" type="number" id="saturday" class="input"
-                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="saturday" class="input"
+                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
               </td>
               </tr>
               <tr>
@@ -969,8 +1116,8 @@
                 <p>Sunday</p>
               </td>
               <td>
-                <input onchange="" class="form-control w-50" type="number" id="sunday" class="input"
-                min="0" max="200" required oninput="validity.valid||(value='');" placeholder="0" required />
+                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="sunday" class="input"
+                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
               </td>
             </tr>
           </table>
@@ -980,67 +1127,53 @@
           <table class="table">
             <tr>
               <td>
-                <p>Monday</p>
+                <p>Monday <br> <span class="output" id="avgMonday"></span></p>
               </td>
+            </tr>
+            <hr style="text-decoration: underline solid black;">
+            <tr>
               <td>
-                <span class="output" id="avgMonday"></span>
+                <p>Tuesday <br> <span class="output" id="avgTuesday"></span></p>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Tuesday</p>
-              </td>
-              <td>
-                <span class="output" id="avgTuesday"></span>
+                <p>Wednesday <br> <span class="output" id="avgWednesday"></span></p>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Wednesday</p>
-              </td>
-              <td>
-                <span class="output" id="avgWednesday"></span>
+                <p>Thursday <br> <span class="output" id="avgThursday"></span></p>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Thursday</p>
-              </td>
-              <td>
-                <span class="output" id="avgThursday"></span>
+                <p>Friday <br> <span class="output" id="avgFriday"></span></p>
               </td>
             </tr>
             <tr>
               <td>
-                <p>Friday</p>
-              </td>
-              <td>
-                <span class="output" id="avgFriday"></span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Saturday</p>
-              </td>
-              <td>
-                <span class="output" id="avgSaturday"></span>
+                <p>Saturday <br> <span class="output" id="avgSaturday"></span></p>
               </td>
             </tr>
             <td>
-              <p>Sunday</p>
-            </td>
-            <td>
-              <span class="output" id="avgSunday"></span>
+              <p>Sunday <br> <span class="output" id="avgSunday"></span></p>
             </td>
           </table>
         </div>
       </div>
     </div>
-    <input class="btn btn-outline-info" onclick="avgOpenings()" type="button" value="Calculate Average Openings"></input>
+    <!-- <input class="btn btn-outline-info" id="excel" type="button" value="Download Excel Sheet "></input> -->
+    <button onclick="revert11()" type="button" class="btn btn-warning">Previous</button>
+    <button type="button" class="btn btn-primary">Next</button>
+  </div>
 
   </div>
+  <script src="excel.js"></script>
   <script src="inputs.js"></script>
+  <script src="sections.js"></script>
   <script src="calculations.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>

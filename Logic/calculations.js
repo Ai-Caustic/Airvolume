@@ -27,22 +27,48 @@ function roomVolume() {
 
 function falseFloor() {
   heightFloor = document.getElementById("heightFloor").value;
-  floorVolume = surfaceArea * heightFloor;
-  document.getElementById("volumeFloor").innerHTML = floorVolume + cubed;
+  manualSurface = document.getElementById("areaRoom1").value;
+  var val = document.getElementById("radioroom");
+
+  if (val.elements["radioRoom"].value == "compute") {
+    floorVolume = surfaceArea * heightFloor;
+    document.getElementById("volumeFloor").innerHTML = floorVolume + cubed;
+  } else if (val.elements["radioRoom"].value == "manually") {
+    floorVolume = manualSurface * heightFloor;
+    document.getElementById("volumeFloor").innerHTML = floorVolume + cubed;
+  }
 }
 
 //Suspended Ceiling
 
 function ceiling() {
+  manualSurface = document.getElementById("areaRoom1").value;
   heightCeiling = document.getElementById("heightCeiling").value;
-  ceilingVolume = surfaceArea * heightCeiling;
-  document.getElementById("volumeCeiling").innerHTML = ceilingVolume + cubed;
+  var val = document.getElementById("radioroom");
+
+  if (val.elements["radioRoom"].value == "compute") {
+    ceilingVolume = surfaceArea * heightCeiling;
+    document.getElementById("volumeCeiling").innerHTML = ceilingVolume + cubed;
+  } else if (val.elements["radioRoom"].value == "manually") {
+    ceilingVolume = manualSurface * heightCeiling;
+    document.getElementById("volumeCeiling").innerHTML = ceilingVolume + cubed;
+  }
 }
 
 function volumeTotal() {
-  totalVolume = volumeRoom + floorVolume + ceilingVolume;
+  var val = document.getElementById("radioroom");
+  var manualVolume = document.getElementById("volumeRoom1").value;
 
-  document.getElementById("totalVolume").innerHTML = totalVolume + cubed;
+  if (val.elements["radioRoom"].value == "compute") {
+    totalVolume = volumeRoom + floorVolume + ceilingVolume;
+    document.getElementById("totalVolume").innerHTML = totalVolume + cubed;
+  } else if (val.elements["radioRoom"].value == "manually") {
+    totalVolume =
+      parseInt(manualVolume) + parseInt(floorVolume) + parseInt(ceilingVolume);
+    document.getElementById("totalVolume").innerHTML = totalVolume + cubed;
+  }
+  console.log(`Total Volume ${totalVolume}`);
+  // document.getElementById("totalVolumeresults").value = totalVolume;
 }
 
 function equipmentSurface() {
@@ -62,6 +88,14 @@ function equipmentVolume() {
   volume = lengthEquipment * widthEquipment * heightEquipment;
 
   document.getElementById("volumeEquipment").innerHTML = volume + cubed;
+}
+function sluiceVolume() {
+  surfaceSluice = document.getElementById("surfaceSluice").value;
+  heightSluice = document.getElementById("heightSluice").value;
+
+  volume = surfaceSluice * heightSluice;
+
+  document.getElementById("volumeSluice").innerHTML = volume + cubed;
 }
 
 function avgOpenings() {

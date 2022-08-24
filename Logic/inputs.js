@@ -4,7 +4,6 @@ function hidefield() {
   document.getElementById("volumeAir").style.display = "none";
   document.getElementById("radiocirculation").style.display = "none";
   document.getElementById("insulation").style.display = "none";
-  document.getElementById("conditionerpower").style.display = "none";
   document.getElementById("wallData1").style.display = "none";
   document.getElementById("wallData2").style.display = "none";
   document.getElementById("wallData3").style.display = "none";
@@ -12,10 +11,17 @@ function hidefield() {
   document.getElementById("wallData5").style.display = "none";
   document.getElementById("wallData6").style.display = "none";
   document.getElementById("warehouse-temperature").style.display = "none";
-  document.getElementById("storagetype").style.display = "none";
   document.getElementById("equipment-dimensions").style.display = "none";
-  document.getElementById("temperature").style.display = "none";
+  document.getElementById("temperatureWarehouse").style.display = "none";
+  document.getElementById("manualroom").style.display = "none";
+  document.getElementById("tableroom").style.display = "none";
   document.getElementById("storageType").style.display = "none";
+  document.getElementById("tableOpenings").style.display = "none";
+  document.getElementById("tableSluice").style.display = "none";
+  document.getElementById("manualSluice").style.display = "none";
+  document.getElementById("sluicevolume").style.display = "none";
+  document.getElementById("tableSluice").style.display = "none";
+  hidesections();
 }
 
 function displayFloor() {
@@ -58,6 +64,7 @@ function displayCirculation() {
     document.getElementById("radiocirculation").style.display = "block";
   } else {
     document.getElementById("radiocirculation").style.display = "none";
+    document.getElementById("volumeAir").style.display = "none";
   }
 }
 
@@ -135,31 +142,17 @@ function displayLayers() {
   }
 }
 
-function displayConditioner() {
-  var val = document.getElementById("radioconditioner");
-
-  console.log(val.elements["radioConditioner"].value);
-
-  if (val.elements["radioConditioner"].value == "yes") {
-    document.getElementById("conditionerpower").style.display = "block";
-  } else {
-    document.getElementById("conditionerpower").style.display = "none";
-  }
-}
-
 function displayWarehouse() {
   var val = document.getElementById("radiowarehouse");
 
   console.log(val.elements["radioWarehouse"].value);
 
-  if (val.elements["radioWarehouse"].value == "yes") {
+  if (val.elements["radioWarehouse"].value == "warehouse") {
     document.getElementById("warehouse-temperature").style.display = "block";
-    document.getElementById("temperature").style.display = "block";
-    document.getElementById("storagetype").style.display = "none";
+    document.getElementById("temperatureWarehouse").style.display = "block";
   } else {
     document.getElementById("warehouse-temperature").style.display = "none";
-    document.getElementById("storagetype").style.display = "block";
-    document.getElementById("temperature").style.display = "none";
+    document.getElementById("temperatureWarehouse").style.display = "none";
   }
 }
 
@@ -184,5 +177,52 @@ function displayStorage() {
     document.getElementById("storageType").style.display = "block";
   } else {
     document.getElementById("storageType").style.display = "none";
+  }
+}
+
+function displayRoom() {
+  var val = document.getElementById("radioroom");
+
+  console.log(val.elements["radioRoom"].value);
+
+  if (val.elements["radioRoom"].value == "manually") {
+    document.getElementById("manualroom").style.display = "block";
+    document.getElementById("tableroom").style.display = "none";
+  } else {
+    document.getElementById("manualroom").style.display = "none";
+    document.getElementById("tableroom").style.display = "block";
+  }
+}
+
+function displayOpenings() {
+  var val = document.getElementById("radioopenings");
+
+  console.log(val.elements["radioOpenings"].value);
+
+  if (
+    val.elements["radioOpenings"].value == "door" ||
+    val.elements["radioOpenings"].value == "doorFast"
+  ) {
+    document.getElementById("tableOpenings").style.display = "block";
+    document.getElementById("tableSluice").style.display = "none";
+    document.getElementById("sluicevolume").style.display = "none";
+    document.getElementById("manualSluice").style.display = "none";
+  } else if (val.elements["radioOpenings"].value == "sluice") {
+    document.getElementById("tableOpenings").style.display = "none";
+    document.getElementById("sluicevolume").style.display = "block";
+  }
+}
+
+function manualSluice() {
+  var val = document.getElementById("sluicevolume");
+
+  console.log(val.elements["sluiceVolume"].value);
+
+  if (val.elements["sluiceVolume"].value == "yes") {
+    document.getElementById("manualSluice").style.display = "block";
+    document.getElementById("tableSluice").style.display = "none";
+  } else {
+    document.getElementById("tableSluice").style.display = "block";
+    document.getElementById("manualSluice").style.display = "none";
   }
 }
