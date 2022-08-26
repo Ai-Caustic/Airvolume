@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  padding-top: 10px;
+  height: fit-content;
 }
 
 * p {
@@ -57,4 +57,33 @@ input:valid {
 form {
   font-family: "Poppins", sans-serif;
   font-size: large;
+}
+.section {
+  /*
+  border: 10px solid;
+   color: darkslategrey;
+   */
+  height: 100%;
+}
+
+.prevSection {
+  background-color: tomato;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+  font-family: "Signika", sans-serif;
+  padding-bottom: 7px;
+  margin-top: 10%;
+  margin-right: 50px;
+}
+
+.nextSection {
+  background-color: aqua;
+  border-radius: 8px;
+  width: 100px;
+  text-align: center;
+  font-family: "Signika", sans-serif;
+  padding-bottom: 7px;
+  margin-top: 10%;
+  margin-left: 50px;
 }

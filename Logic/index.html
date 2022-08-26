@@ -14,14 +14,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 </head>
 
 <body onload="hidefield()" class="body">
   <div class="document text-center">
-
-    <div class="section1" id="section1">
-    <div class="generalData">
+    <div class="section" id="section1">  
+    <div class="generalData"> 
       <div class="card">
         <div class="card-header">
           <h3>General Data</h3>
@@ -52,7 +52,7 @@
                   <p>Location / site of project</p>
                 </td>
                 <td>
-                  <input class="form-control w-50" type="text" id="Location" class="input" placeholder="Location"
+                  <input class="form-control w-50" type="text" id="projectLo" class="input" placeholder="Location"
                     required maxlength="40" />
                 </td>
               </tr>
@@ -78,13 +78,12 @@
           </div>
         </div>
       </div>
-    </div>
-    <button onclick="change1()" type="button" class="btn btn-primary">Next</button>
-    <button onclick="" type="button" class="btn btn-primary">Test Button</button>
-    
+    </div> 
+    <button class="excel" id="demo">Download Excel Sheet</button> 
+    <button class="nextSection" onclick="change1()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-<div class="section2" id="section2">
+<div class="section" id="section2">
     <div class="protectedArea">
       <div class="card">
         <div class="card-header">
@@ -134,11 +133,11 @@
         </div>
       </div>
     </div>
-    <button onclick="revert1()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change2()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert1()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change2()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-  <div class="section3" id="section3">
+  <div class="section" id="section3">
     <div class="Room">
       <div class="card text-center w-100">
         <div class="card-header">
@@ -225,11 +224,11 @@
 
       </div>
     </div>
-    <button onclick="revert2()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick = "change3()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert2()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick = "change3()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-    <div class="section4" id="section4">
+    <div class="section" id="section4">
     <div class="floor">
       <div class="card text-center">
         <div class="card-header">
@@ -277,11 +276,11 @@
         </div>
       </div>
     </div>
-    <button onclick="revert3()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change4()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert3()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change4()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-  <div class="section5" id="section5">
+  <div class="section" id="section5">
     <div class="ceiling">
       <div class="card text-center">
         <div class="card-header">
@@ -327,11 +326,11 @@
       </div>
 
     </div>
-    <button onclick="revert4()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change5()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert4()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change5()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-    <div class="section6" id="section6">
+    <div class="section" id="section6">
     <div class="totVolume" id="totVolume">
       <div class="card text-center">
         <div class="card-header">
@@ -358,11 +357,11 @@
       </div>
 
     </div>
-    <button onclick="revert5()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change6()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert5()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change6()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-  <div class="section7" id="section7">
+  <div class="section" id="section7">
     <div class="ventilation">
       <div class="card text-center">
         <div class="card-header">
@@ -410,11 +409,11 @@
         </div>
       </div>
     </div>
-    <button onclick="revert6()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change7()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert6()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change7()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-  <div class="section8" id="section8">
+  <div class="section" id="section8">
     <div class="outsideWalls">
       <div class="card text-center">
         <div class="card-header">
@@ -473,11 +472,11 @@
         </div>
       </div>
     </div>
-    <button onclick="revert7()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change8()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert7()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change8()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-  <div class="section9" id="section9">
+  <div class="section" id="section9">
     <div class="wallLayers">
       <div class="card text-center">
         <div class="card-header">
@@ -597,7 +596,7 @@
               </td>
               <td>
                 <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
+                  oninput="validity.valid||(value='');" required>
               </td>
             </tr>
             <tr>
@@ -606,6 +605,15 @@
               </td>
               <td>
                 <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
                   oninput="validity.valid||(value='');" required>
               </td>
             </tr>
@@ -621,6 +629,15 @@
                   oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Fast on door:</h6>
@@ -631,6 +648,15 @@
               <td>
                 <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
                   oninput="validity.valid||(value='');" required></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -663,6 +689,15 @@
                   oninput="validity.valid||(value='');" required>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Door:</h6>
@@ -675,6 +710,15 @@
                   oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Fast on door:</h6>
@@ -685,6 +729,15 @@
               <td>
                 <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
                   oninput="validity.valid||(value='');" required></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -717,6 +770,15 @@
                   oninput="validity.valid||(value='');" required>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Door:</h6>
@@ -729,6 +791,15 @@
                   oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Fast on door:</h6>
@@ -739,6 +810,15 @@
               <td>
                 <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
                   oninput="validity.valid||(value='');" required></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -771,6 +851,15 @@
                   oninput="validity.valid||(value='');" required>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Door:</h6>
@@ -783,6 +872,15 @@
                   oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Fast on door:</h6>
@@ -793,6 +891,15 @@
               <td>
                 <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
                   oninput="validity.valid||(value='');" required></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -825,6 +932,15 @@
                   oninput="validity.valid||(value='');" required>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Door:</h6>
@@ -837,6 +953,15 @@
                   oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Fast on door:</h6>
@@ -847,6 +972,15 @@
               <td>
                 <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
                   oninput="validity.valid||(value='');" required></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -879,6 +1013,15 @@
                   oninput="validity.valid||(value='');" required>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
           <table class="table">
             <h6 style="font-weight: bold;">Door:</h6>
@@ -889,6 +1032,15 @@
               <td>
                 <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
                   oninput="validity.valid||(value='');" required></i>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
               </td>
             </tr>
           </table>
@@ -903,15 +1055,24 @@
                   oninput="validity.valid||(value='');" required></i>
               </td>
             </tr>
+            <tr>
+              <td>
+                <p>Duration(s)</p>
+              </td>
+              <td>
+                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                  oninput="validity.valid||(value='');" required>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
     </div>
-    <button onclick="revert8()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change9()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert8()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change9()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-<div class="section10" id="section10">
+<div class="section" id="section10">
     <div class="equipment">
       <div class="card text-center">
         <div class="card-header">
@@ -994,11 +1155,11 @@
         </div>
       </div>
     </div>
-    <button onclick="revert9()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change10()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert9()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change10()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-  <div class="section11" id="section11">
+  <div class="section" id="section11">
     <div class="storage">
       <div class="card text-center">
         <div class="card-header">
@@ -1042,130 +1203,139 @@
         </div>
       </div>
     </div>
-    <button onclick="revert10()" type="button" class="btn btn-warning">Previous</button>
-    <button onclick="change11()" type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert10()" type="button" class="btn btn-warning">Previous</button>
+    <button class="nextSection" onclick="change11()" type="button" class="btn btn-primary">Next</button>
   </div>
 
-  <div class="section12" id="section12">
+  <div class="section" id="section12">
     <div class="openings">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Operating Hours</h3>
-        </div>
-        <div class="card-text">
-          <p>Hours of operation per day</p>
-        </div>
-        <div class="card-body" id="open-hours">
-          <table class="table">
-            <tr>
-              <td>
-                <p>Monday</p>
-              </td>
-              <td>
-                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="monday" class="input"
-                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
-              </td>
-              </tr>
-              <tr>
-              <td>
-                <p>Tuesday</p>
-              </td>
-              <td>
-                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="tuesday" class="input"
-                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
-              </td>
-              </tr>
-              <tr>
-              <td>
-                <p>Wednesday</p>
-              </td>
-              <td>
-                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="wednesday" class="input"
-                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
-              </td>
-              </tr>
-              <tr>
-              <td>
-                <p>Thursday</p>
-              </td>
-              <td>
-                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="thursday" class="input"
-                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
-              </td>
-              </tr>
-              <tr>
-              <td>
-                <p>Friday</p>
-              </td>
-              <td>
-                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="friday" class="input"
-                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
-              </td>
-              </tr>
-              <tr>
-              <td>
-                <p>Saturday</p>
-              </td>
-              <td>
-                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="saturday" class="input"
-                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
-              </td>
-              </tr>
-              <tr>
-              <td>
-                <p>Sunday</p>
-              </td>
-              <td>
-                <input onchange="avgOpenings()" class="form-control w-50" type="number" id="sunday" class="input"
-                min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
-              </td>
-            </tr>
-          </table>
-          <div class="card-text">
-            <p>Average openings(per operation hour)</p>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card text-center">
+              <div class="card-header">
+                <h3>Operating Hours</h3>
+              </div>
+              <div class="card-text">
+                <p>Hours of operation per day</p>
+              </div>
+              <div class="card-body" id="open-hours">
+                <table class="table">
+                  <tr>
+                    <td>
+                      <p>Monday</p>
+                    </td>
+                    <td>
+                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="monday" class="input"
+                      min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                      <p>Tuesday</p>
+                    </td>
+                    <td>
+                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="tuesday" class="input"
+                      min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                      <p>Wednesday</p>
+                    </td>
+                    <td>
+                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="wednesday" class="input"
+                      min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                      <p>Thursday</p>
+                    </td>
+                    <td>
+                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="thursday" class="input"
+                      min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                      <p>Friday</p>
+                    </td>
+                    <td>
+                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="friday" class="input"
+                      min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                      <p>Saturday</p>
+                    </td>
+                    <td>
+                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="saturday" class="input"
+                      min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                      <p>Sunday</p>
+                    </td>
+                    <td>
+                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="sunday" class="input"
+                      min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required />
+                    </td>
+                  </tr>
+                </table>
+                </div>
+              </div>
           </div>
-          <table class="table">
-            <tr>
-              <td>
-                <p>Monday <br> <span class="output" id="avgMonday"></span></p>
-              </td>
-            </tr>
-            <hr style="text-decoration: underline solid black;">
-            <tr>
-              <td>
-                <p>Tuesday <br> <span class="output" id="avgTuesday"></span></p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Wednesday <br> <span class="output" id="avgWednesday"></span></p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Thursday <br> <span class="output" id="avgThursday"></span></p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Friday <br> <span class="output" id="avgFriday"></span></p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Saturday <br> <span class="output" id="avgSaturday"></span></p>
-              </td>
-            </tr>
-            <td>
-              <p>Sunday <br> <span class="output" id="avgSunday"></span></p>
-            </td>
-          </table>
+          <div class="col">
+            <div class="card text-center">
+              <div class="card-text">
+                <p>Average openings(per operation hour)</p>
+              </div>
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Monday <br> <span class="output" id="avgMonday"></span></p>
+                  </td>
+                </tr>
+                <hr style="text-decoration: underline solid black;">
+                <tr>
+                  <td>
+                    <p>Tuesday <br> <span class="output" id="avgTuesday"></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Wednesday <br> <span class="output" id="avgWednesday"></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Thursday <br> <span class="output" id="avgThursday"></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Friday <br> <span class="output" id="avgFriday"></span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Saturday <br> <span class="output" id="avgSaturday"></span></p>
+                  </td>
+                </tr>
+                <td>
+                  <p>Sunday <br> <span class="output" id="avgSunday"></span></p>
+                </td>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- <input class="btn btn-outline-info" id="excel" type="button" value="Download Excel Sheet "></input> -->
-    <button onclick="revert11()" type="button" class="btn btn-warning">Previous</button>
-    <button type="button" class="btn btn-primary">Next</button>
+    <button class="prevSection" onclick="revert11()" type="button" class="btn btn-warning">Previous</button>
+    
   </div>
 
   </div>
@@ -1173,7 +1343,6 @@
   <script src="inputs.js"></script>
   <script src="sections.js"></script>
   <script src="calculations.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>

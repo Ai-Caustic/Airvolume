@@ -16,24 +16,22 @@ function hidesections() {
 function change1() {
   client = document.getElementById("Client").value;
   projectName = document.getElementById("projectName").value;
-  //location = document.getElementById("Location").value;
+  projectLo = document.getElementById("projectLo").value;
   city = document.getElementById("city").value;
   country = document.getElementById("country").value;
 
-  //   if (
-  //     client !== "" &&
-  //     projectName !== "" &&
-  //     location !== "" &&
-  //     city !== "" &&
-  //     country !== ""
-  //   ) {
-  //     document.getElementById("section1").style.display = "none";
-  //     document.getElementById("section2").style.display = "block";
-  //   } else {
-  //     console.log("Please fill in the fields");
-  //   }
-  document.getElementById("section1").style.display = "none";
-  document.getElementById("section2").style.display = "block";
+  if (
+    client !== "" &&
+    projectName !== "" &&
+    projectLo !== "" &&
+    city !== "" &&
+    country !== ""
+  ) {
+    document.getElementById("section1").style.display = "none";
+    document.getElementById("section2").style.display = "block";
+  } else {
+    window.alert("Please fill in the fields");
+  }
 }
 
 function revert1() {
@@ -58,7 +56,7 @@ function change2() {
       document.getElementById("section3").style.display = "block";
       document.getElementById("section2").style.display = "none";
     } else {
-      console.log("Input values");
+      window.alert("Please fill in the fields");
     }
   }
 }
@@ -81,14 +79,14 @@ function change3() {
       document.getElementById("section4").style.display = "block";
       document.getElementById("section3").style.display = "none";
     } else {
-      console.log("Input Values");
+      window.alert("Please fill in the fields");
     }
   } else if (val.elements["radioRoom"].value == "compute") {
     if (length !== "" && width !== "" && height !== "") {
       document.getElementById("section4").style.display = "block";
       document.getElementById("section3").style.display = "none";
     } else {
-      console.log("Input Values");
+      window.alert("Please fill in the fields");
     }
   }
   volumeTotal();
@@ -111,7 +109,7 @@ function change4() {
       document.getElementById("section5").style.display = "block";
       document.getElementById("section4").style.display = "none";
     } else {
-      console.log("Input values");
+      window.alert("Please fill in the fields");
     }
   }
   volumeTotal();
@@ -134,7 +132,7 @@ function change5() {
       document.getElementById("section6").style.display = "block";
       document.getElementById("section5").style.display = "none";
     } else {
-      console.log("Input values");
+      window.alert("Please fill in the fields");
     }
   }
   volumeTotal();
@@ -172,7 +170,7 @@ function change7() {
         document.getElementById("section7").style.display = "none";
         document.getElementById("section8").style.display = "block";
       } else {
-        console.log("Input values");
+        window.alert("Please fill in the fields");
       }
     }
   }
@@ -201,7 +199,7 @@ function change8() {
       document.getElementById("section8").style.display = "none";
     }
   } else {
-    console.log("Input values");
+    window.alert("Please fill in the fields");
   }
 }
 
@@ -220,6 +218,8 @@ function change9() {
   widthOpening = document.getElementById("widthOpening").value;
   heightOpening = document.getElementById("heightOpening").value;
 
+  //The most complex Conditional statements I've ever written in my life
+
   if (val.elements["radioOpenings"].value == "sluice") {
     if (val1.elements["sluiceVolume"].value == "no") {
       if (surfaceSluice !== "" && heightSluice !== "" && openings !== "") {
@@ -231,7 +231,7 @@ function change9() {
           document.getElementById("section10").style.display = "block";
         }
       } else {
-        console.log("Input Values");
+        window.alert("Please fill in the fields");
       }
     } else if (val1.elements["sluiceVolume"].value == "yes") {
       if (manualVolume !== "" && openings !== "") {
@@ -239,7 +239,7 @@ function change9() {
         document.getElementById("section10").style.display = "block";
       }
     } else {
-      console.log("Input Values");
+      window.alert("Please fill in the fields");
     }
   } else if (
     val.elements["radioOpenings"].value == "door" ||
@@ -249,10 +249,10 @@ function change9() {
       document.getElementById("section9").style.display = "none";
       document.getElementById("section10").style.display = "block";
     } else {
-      console.log("Input Values");
+      window.alert("Please fill in the fields");
     }
   } else {
-    console.log("Input Values");
+    window.alert("Please fill in the fields");
   }
 }
 
@@ -276,10 +276,10 @@ function change10() {
       document.getElementById("section10").style.display = "none";
       document.getElementById("section11").style.display = "block";
     } else {
-      console.log("Input Values");
+      window.alert("Please fill in the fields");
     }
   } else {
-    console.log("Input Values");
+    window.alert("Please fill in the fields");
   }
 }
 
@@ -299,17 +299,17 @@ function change11() {
       document.getElementById("section11").style.display = "none";
       document.getElementById("section12").style.display = "block";
     } else {
-      console.log("Input Values");
+      window.alert("Please fill in the fields");
     }
   } else if (val.elements["radioStorage"].value == "yes") {
     if (volume !== "" && oxyContent !== "") {
       document.getElementById("section11").style.display = "none";
       document.getElementById("section12").style.display = "block";
     } else {
-      console.log("Input Values");
+      window.alert("Please fill in the fields");
     }
   } else {
-    console.log("Input Values");
+    window.alert("Please fill in the fields");
   }
 }
 
