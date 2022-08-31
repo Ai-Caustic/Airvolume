@@ -58,6 +58,8 @@ function change2() {
     } else {
       window.alert("Please fill in the fields");
     }
+  } else {
+    window.alert("Please fill in the fields");
   }
 }
 
@@ -290,7 +292,6 @@ function revert10() {
 
 function change11() {
   var val = document.getElementById("radiostorage");
-
   volume = document.getElementById("stockpercentage").value;
   oxyContent = document.getElementById("oxygenContent").value;
 

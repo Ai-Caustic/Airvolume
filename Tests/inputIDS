@@ -1,0 +1,69 @@
+//General Data
+
+// client = document.getElementById("Client").value;
+// projectName = document.getElementById("projectName").value;
+// projectLo = document.getElementById("projectLo").value;
+// city = document.getElementById("city").value;
+// country = document.getElementById("country").value;
+
+//Warehouse
+
+// var radioWarehouse = document.getElementById("radiowarehouse");
+// temperature = document.getElementById("temperature").value;
+// n50 = document.getElementById("n50").value;
+
+//Room
+
+// var radioRoom = document.getElementById("radioroom");
+// manualSurfaceRoom = document.getElementById("areaRoom1").value;
+// manualVolumeRoom = document.getElementById("volumeRoom1").value;
+// lengthRoom = document.getElementById("lengthRoom").value;
+// widthRoom = document.getElementById("widthRoom").value;
+// heightRoom = document.getElementById("heightRoom").value;
+
+//False Floor
+
+// var radioFloor = document.getElementById("radiofloor");
+// heightFalseFloor = document.getElementById("heightFloor").value;
+
+//False Ceiling
+
+// var radioCeiling = document.getElementById("radioCeiling");
+// heightFalseCeiling = document.getElementById("heightCeiling").value;
+
+//Ventilation
+
+// var radioVentilation = document.getElementById("radioventilation");
+// air = document.getElementById("volAir").value;
+// var radioCirculation = document.getElementById("radiocirculation");
+
+//Walls
+
+// var radioWalls = document.getElementById("radiowalls");
+// var insulationType = document.getElementById("insulationtype");
+// var windLoad = document.getElementById("windload");
+
+//Openings
+
+// var radioOpenings = document.getElementById("radioopenings");
+// var sluiceVolume = document.getElementById("sluicevolume");
+// openings = document.getElementById("wall-layers").value;
+// manuaVolumeSluice = document.getElementById("volumeSluice1").value;
+// surfaceSluice = document.getElementById("surfaceSluice").value;
+// heightSluice = document.getElementById("heightSluice").value;
+// widthOpening = document.getElementById("widthOpening").value;
+// heightOpening = document.getElementById("heightOpening").value;
+
+//Equipment Room
+
+// var radioEquipment = document.getElementById("radioequipment");
+// lengthEquipment = document.getElementById("length-equipment").value;
+// widthEquipment = document.getElementById("width-equipment").value;
+// heightEquipment = document.getElementById("height-equipment").value;
+// tempEquipment = document.getElementById("temp-equipment").value;
+
+//Storage Room
+
+// var radioStorage = document.getElementById("radiostorage");
+// volumeStorage = document.getElementById("stockpercentage").value;
+// oxyContentStorage = document.getElementById("oxygenContent").value;

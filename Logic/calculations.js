@@ -115,8 +115,6 @@ function avgOpenings() {
   var avgSaturday = saturday / 24;
   var avgSunday = sunday / 24;
 
-  console.log(avgMonday.toFixed(4));
-
   document.getElementById("avgMonday").innerHTML = avgMonday.toFixed(4);
   document.getElementById("avgTuesday").innerHTML = avgTuesday.toFixed(4);
   document.getElementById("avgWednesday").innerHTML = avgWednesday.toFixed(4);

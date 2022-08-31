@@ -7,20 +7,129 @@
 //Generate Excel File
 
 document.getElementById("demo").onclick = () => {
-  // General Data
+  //General Data
+
   var client = document.getElementById("Client").value;
   var projectName = document.getElementById("projectName").value;
   var projectLo = document.getElementById("projectLo").value;
   var city = document.getElementById("city").value;
   var country = document.getElementById("country").value;
 
+  //Warehouse
+
+  var radioWarehouse = document.getElementById("radiowarehouse");
+  var radioWarehouseValue = radioWarehouse.elements["radioWarehouse"].value;
+  var temperatureWarehouse = document.getElementById("temperature").value;
+  var n50 = document.getElementById("n50").value;
+
+  //Room
+
+  var radioRoom = document.getElementById("radioroom");
+  var radioRoomValue = radioRoom.elements["radioRoom"].value;
+  var manualSurfaceRoom = document.getElementById("areaRoom1").value;
+  var manualVolumeRoom = document.getElementById("volumeRoom1").value;
+  var lengthRoom = document.getElementById("lengthRoom").value;
+  var widthRoom = document.getElementById("widthRoom").value;
+  var heightRoom = document.getElementById("heightRoom").value;
+
+  //False Floor
+
+  var radioFloor = document.getElementById("radiofloor");
+  var radioFloorValue = radioFloor.elements["radioFloor"].value;
+  var heightFalseFloor = document.getElementById("heightFloor").value;
+
+  //False Ceiling
+
+  var radioCeiling = document.getElementById("radioCeiling");
+  var radioCeilingValue = radioCeiling.elements["radioCeiling"].value;
+  var heightFalseCeiling = document.getElementById("heightCeiling").value;
+
+  //Ventilation
+
+  var radioVentilation = document.getElementById("radioventilation");
+  var radioVentilationValue =
+    radioVentilation.elements["radioVentilation"].value;
+  var airVolume = document.getElementById("volAir").value;
+  var radioCirculation = document.getElementById("radiocirculation");
+  var radioCirculationValue =
+    radioCirculation.elements["radioCirculation"].value;
+
+  //Walls
+
+  var radioWalls = document.getElementById("radiowalls");
+  var radioWallsValue = radioWalls.elements["radioWalls"].value;
+  var insulationType = document.getElementById("insulationtype");
+  var insulationTypeValue = insulationType.elements["insulationType"].value;
+  var windLoad = document.getElementById("windload");
+  var radioWindLoadValue = windLoad.elements["windLoad"].value;
+
+  //Openings
+
+  var radioOpenings = document.getElementById("radioopenings");
+  var radioOpeningsValue = radioOpenings.elements["radioOpenings"].value;
+  var sluiceVolume = document.getElementById("sluicevolume");
+  var openings = document.getElementById("wall-layers").value;
+  var manuaVolumeSluice = document.getElementById("volumeSluice1").value;
+  var surfaceSluice = document.getElementById("surfaceSluice").value;
+  var heightSluice = document.getElementById("heightSluice").value;
+  var widthOpening = document.getElementById("widthOpening").value;
+  var heightOpening = document.getElementById("heightOpening").value;
+
+  //Equipment Room
+
+  var radioEquipment = document.getElementById("radioequipment");
+  var radioEquipmentValue = radioEquipment.elements["radioEquipment"].value;
+  var lengthEquipment = document.getElementById("length-equipment").value;
+  var widthEquipment = document.getElementById("width-equipment").value;
+  var heightEquipment = document.getElementById("height-equipment").value;
+  var tempEquipment = document.getElementById("temp-equipment").value;
+
+  //Storage Room
+
+  var radioStorage = document.getElementById("radiostorage");
+  var radioStorageValue = radioStorage.elements["radioStorage"].value;
+  var volumeStorage = document.getElementById("stockpercentage").value;
+  var oxyContentStorage = document.getElementById("oxygenContent").value;
+
   // GENERATE DEMO EXCEL FILE
   var data = [
+    ["GENERAL DATA"],
+    [],
     ["Client", client],
     ["Project Name", projectName],
     ["Location", projectLo],
     ["City", city],
     ["Country", country],
+    [],
+    ["WAREHOUSE"],
+    ["Warehouse present?", radioWarehouseValue],
+    ["Warehouse Temperature", temperatureWarehouse],
+    ["N-50 value", n50],
+    [],
+    ["ROOM"],
+    [],
+    ["Manually/Computed?", radioRoomValue],
+    ["Manual Surface Area", manualSurfaceRoom],
+    ["Manual Volume", manualVolumeRoom],
+    ["Length", lengthRoom],
+    ["Width", widthRoom],
+    ["Height", heightRoom],
+    [],
+    ["FALSE FLOOR"],
+    ["False floor present?", radioFloorValue],
+    [],
+    ["Height", heightFalseFloor],
+    [],
+    ["FALSE CEILING"],
+    ["False Ceiling Present?", radioCeilingValue],
+    [],
+    ["Height", heightFalseCeiling],
+    [],
+    ["VENTILATION"],
+    ["Ventilation present?", radioVentilationValue],
+    [],
+    ["Air Volume", airVolume],
+    ["Ventilation type", radioCirculationValue],
   ];
 
   var workbook = XLSX.utils.book_new(),
