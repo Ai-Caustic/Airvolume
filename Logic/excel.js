@@ -1,11 +1,5 @@
 //Creating a downloadable excel sheet containing all the data
 
-//Function for testing on the General data section
-
-//General Data (Data)
-
-//Generate Excel File
-
 document.getElementById("demo").onclick = () => {
   //General Data
 
@@ -68,6 +62,7 @@ document.getElementById("demo").onclick = () => {
   var radioOpenings = document.getElementById("radioopenings");
   var radioOpeningsValue = radioOpenings.elements["radioOpenings"].value;
   var sluiceVolume = document.getElementById("sluicevolume");
+  var sluiceVolumeValue = sluiceVolume.elements["sluiceVolume"].value;
   var openings = document.getElementById("wall-layers").value;
   var manuaVolumeSluice = document.getElementById("volumeSluice1").value;
   var surfaceSluice = document.getElementById("surfaceSluice").value;
@@ -91,7 +86,7 @@ document.getElementById("demo").onclick = () => {
   var volumeStorage = document.getElementById("stockpercentage").value;
   var oxyContentStorage = document.getElementById("oxygenContent").value;
 
-  // GENERATE DEMO EXCEL FILE
+  //GENERATE EXCEL FILE
   var data = [
     ["GENERAL DATA"],
     [],
@@ -130,6 +125,38 @@ document.getElementById("demo").onclick = () => {
     [],
     ["Air Volume", airVolume],
     ["Ventilation type", radioCirculationValue],
+    [],
+    ["OUTSIDE WALLS"],
+    [],
+    ["Outside walls", radioWallsValue],
+    ["Insulation type", insulationTypeValue],
+    ["Wind load", radioWindLoadValue],
+    [],
+    ["OPENINGS"],
+    [],
+    ["Opening present", radioOpeningsValue],
+    [],
+    ["Manually?", sluiceVolumeValue],
+    ["Openings", openings],
+    ["Manual Sluice Volume", manuaVolumeSluice],
+    ["Surface Area", surfaceSluice],
+    ["Height", heightSluice],
+    ["Width Opening", widthOpening],
+    ["Height Opening", heightOpening],
+    [],
+    ["EQUIPMENT ROOM"],
+    [],
+    ["Equipment room present?", radioEquipmentValue],
+    ["Length", lengthEquipment],
+    ["Width", widthEquipment],
+    ["Height", heightEquipment],
+    ["Temperature", tempEquipment],
+    [],
+    ["PROTECTED MATERIAL"],
+    [],
+    ["Protected material present?", radioStorageValue],
+    ["Volume", volumeStorage],
+    ["Oxygen Content", oxyContentStorage],
   ];
 
   var workbook = XLSX.utils.book_new(),
@@ -137,13 +164,13 @@ document.getElementById("demo").onclick = () => {
   workbook.SheetNames.push("First");
   workbook.Sheets["First"] = worksheet;
 
-  // (C3) TO BINARY STRING
+  //TO BINARY STRING
   var xlsbin = XLSX.write(workbook, {
     bookType: "xlsx",
     type: "binary",
   });
 
-  // (C4) TO BLOB OBJECT
+  //TO BLOB OBJECT
   var buffer = new ArrayBuffer(xlsbin.length),
     array = new Uint8Array(buffer);
   for (var i = 0; i < xlsbin.length; i++) {
@@ -154,7 +181,7 @@ document.getElementById("demo").onclick = () => {
   delete buffer;
   delete xlsbin;
 
-  // (C5) "FORCE DOWNLOAD"
+  //"FORCE DOWNLOAD"
   var url = window.URL.createObjectURL(xlsblob),
     anchor = document.createElement("a");
   anchor.href = url;
