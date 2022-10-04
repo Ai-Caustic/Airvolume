@@ -25,18 +25,21 @@ document.getElementById("demo").onclick = () => {
   var lengthRoom = document.getElementById("lengthRoom").value;
   var widthRoom = document.getElementById("widthRoom").value;
   var heightRoom = document.getElementById("heightRoom").value;
+  var roomvolume = document.getElementById("volumeRoom").value;
 
   //False Floor
 
   var radioFloor = document.getElementById("radiofloor");
   var radioFloorValue = radioFloor.elements["radioFloor"].value;
   var heightFalseFloor = document.getElementById("heightFloor").value;
+  var floorVolume = document.getElementById("volumeFloor").value;
 
   //False Ceiling
 
   var radioCeiling = document.getElementById("radioCeiling");
   var radioCeilingValue = radioCeiling.elements["radioCeiling"].value;
   var heightFalseCeiling = document.getElementById("heightCeiling").value;
+  var ceilingVolume = document.getElementById("volumeCeiling").value;
 
   //Ventilation
 
@@ -97,7 +100,7 @@ document.getElementById("demo").onclick = () => {
     ["Country", country],
     [],
     ["WAREHOUSE"],
-    ["Warehouse present?", radioWarehouseValue],
+    ["Type", radioWarehouseValue],
     ["Warehouse Temperature", temperatureWarehouse],
     ["N-50 value", n50],
     [],
@@ -109,16 +112,19 @@ document.getElementById("demo").onclick = () => {
     ["Length", lengthRoom],
     ["Width", widthRoom],
     ["Height", heightRoom],
+    ["Volume Room", roomvolume],
     [],
     ["FALSE FLOOR"],
     ["False floor present?", radioFloorValue],
     [],
     ["Height", heightFalseFloor],
+    ["Volume Floor", floorVolume],
     [],
     ["FALSE CEILING"],
     ["False Ceiling Present?", radioCeilingValue],
     [],
     ["Height", heightFalseCeiling],
+    ["Ceiling volume", ceilingVolume],
     [],
     ["VENTILATION"],
     ["Ventilation present?", radioVentilationValue],
@@ -134,10 +140,10 @@ document.getElementById("demo").onclick = () => {
     [],
     ["OPENINGS"],
     [],
-    ["Opening present", radioOpeningsValue],
+    ["Opening", radioOpeningsValue],
     [],
     ["Manually?", sluiceVolumeValue],
-    ["Openings", openings],
+    ["Openings present", openings],
     ["Manual Sluice Volume", manuaVolumeSluice],
     ["Surface Area", surfaceSluice],
     ["Height", heightSluice],

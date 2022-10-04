@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -53,7 +54,7 @@
                   </td>
                   <td>
                     <input class="form-control w-50" type="text" id="projectLo" class="input" placeholder="Location"
-                      required maxlength="40" autocomplete="off"/>
+                      required maxlength="40" autocomplete="off" />
                   </td>
                 </tr>
                 <tr>
@@ -62,7 +63,7 @@
                   </td>
                   <td>
                     <input class="form-control w-50" type="text" id="city" class="input" placeholder="City" required
-                      maxlength="40" autocomplete="off"/>
+                      maxlength="40" autocomplete="off" />
                   </td>
                 </tr>
                 <tr>
@@ -71,7 +72,7 @@
                   </td>
                   <td>
                     <input class="form-control w-50" type="text" id="country" class="input" placeholder="Country"
-                      required maxlength="40" autocomplete="off"/>
+                      required maxlength="40" autocomplete="off" />
                   </td>
                 </tr>
               </table>
@@ -81,6 +82,7 @@
       </div>
       <br>
       <br>
+      <div class="saved"></div>
       <button class="btn btn-primary" onclick="change1()" type="button">Next</button>
     </div>
 
@@ -134,14 +136,14 @@
                 </td>
                 <td>
                   <input class="form-control w-50" oninput="" type="number" id="temperature" class="input"
-                    placeholder="0" min="-60" oninput="validity.valid||(value='');" required autocomplete="off"/>
+                    placeholder="0" min="-60" oninput="validity.valid||(value='');" required autocomplete="off" />
                 </td>
                 <td>
                   <p>N-50 value</p>
                 </td>
                 <td>
                   <input class="form-control w-50" oninput="" type="number" id="n50" class="input" placeholder="0"
-                    min="0" oninput="validity.valid||(value='');" required autocomplete="off"/>
+                    min="0" oninput="validity.valid||(value='');" required autocomplete="off" />
                 </td>
               </tr>
             </table>
@@ -151,433 +153,1012 @@
       <br>
       <br>
       <button class="btn btn-warning" onclick="revert1()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change2()" type="button" class="btn btn-primary">Next</button>
+      <button class="btn btn-primary" onclick="change2()" type="button" class="btn btn-primary">Next</button>
     </div>
 
-  <div class="section" id="section3">
-    <div class="Room">
-      <div class="card text-center w-100">
-        <div class="card-header">
-          <h3>Room (Without False Floor/Ceiling)</h3>
-        </div>
-        <div class="card-body">
+    <div class="section" id="section3">
+      <div class="Room">
+        <div class="card text-center w-100">
+          <div class="card-header">
+            <h3>Room (Without False Floor/Ceiling)</h3>
+          </div>
+          <div class="card-body">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <form class="checkbox" id="radioroom">
-              <label class="btn btn-secondary"><input onclick="displayRoom()" type="radio" name="radioRoom" id="yes"
-                  value="manually" />Manually</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <label class="btn btn-secondary"><input onclick="displayRoom()" type="radio" name="radioRoom" id="yes"
-                  value="compute" />Compute</label>
-            </form>
-          </div>
+              <form class="checkbox" id="radioroom">
+                <label class="btn btn-secondary"><input onclick="displayRoom()" type="radio" name="radioRoom" id="yes"
+                    value="manually" />Manually</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label class="btn btn-secondary"><input onclick="displayRoom()" type="radio" name="radioRoom" id="yes"
+                    value="compute" />Compute</label>
+              </form>
+            </div>
             <br>
-            <br>  
-          
-          <div class="manualroom" id="manualroom">
-            <table class="table">
-              <tr>
-                <td>
-                  <p>Surface Area: </p>
-                </td>
-                <td>
-                  <input class="form-control w-50" oninput="volumeTotal()" type="number" id="areaRoom1" class="input"
-                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" required autocomplete="off"/>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Volume:</p>
-                </td>
-                <td>
-                  <input class="form-control w-50" oninput="volumeTotal()" type="number" id="volumeRoom1" class="input"
-                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" oninput="volumeTotal()" required autocomplete="off"/>
-                </td>
-              </tr>
-            </table>
+            <br>
+
+            <div class="manualroom" id="manualroom">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Surface Area: </p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" oninput="volumeTotal()" type="number" id="areaRoom1" class="input"
+                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required autocomplete="off" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Volume:</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" oninput="volumeTotal()" type="number" id="volumeRoom1"
+                      class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
+                      oninput="volumeTotal()" required autocomplete="off" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="tableroom">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Length(m): </p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" oninput="volumeTotal()" onchange="roomSurface()" type="number"
+                      id="lengthRoom" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
+                      required autocomplete="off" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Width(m):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" oninput="volumeTotal()" onchange="roomSurface()" type="number"
+                      id="widthRoom" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
+                      required autocomplete="off" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Height(m):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" oninput="volumeTotal()" onchange="roomVolume()" type="number"
+                      id="heightRoom" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
+                      required autocomplete="off" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Surface Area (room) </p>
+                  </td>
+                  <td>
+                    <span class="output" id="areaRoom"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Volume (room) </p>
+                  </td>
+                  <td>
+                    <span class="output" id="volumeRoom" onchange="volumeTotal1()" /></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
-          <div id="tableroom">
-            <table class="table">
-              <tr>
-                <td>
-                  <p>Length(m): </p>
-                </td>
-                <td>
-                  <input class="form-control w-50" oninput="volumeTotal()" onchange="roomSurface()" type="number"
-                    id="lengthRoom" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
-                    required autocomplete="off"/>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Width(m):</p>
-                </td>
-                <td>
-                  <input class="form-control w-50" oninput="volumeTotal()" onchange="roomSurface()" type="number"
-                    id="widthRoom" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
-                    required autocomplete="off"/>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Height(m):</p>
-                </td>
-                <td>
-                  <input class="form-control w-50" oninput="volumeTotal()" onchange="roomVolume()" type="number"
-                    id="heightRoom" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
-                    required autocomplete="off"/>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Surface Area (room) </p>
-                </td>
-                <td>
-                  <span class="output" id="areaRoom"></span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Volume (room) </p>
-                </td>
-                <td>
-                  <span class="output" id="volumeRoom" onchange="volumeTotal1()" /></span>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
 
+        </div>
       </div>
-    </div>
-    <br>
       <br>
-    <button class="btn btn-warning" onclick="revert2()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change3()" type="button" class="btn btn-primary">Next</button>
-  </div>
-
-  <div class="section" id="section4">
-    <div class="floor">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>False floor (additional)</h3>
-        </div>
-        <div class="card-text">
-          <p>Is false floor Present?</p>
-        </div>
-        <form class="checkbox" id="radiofloor">
-          <label class="btn btn-secondary"><input onclick="displayFloor()" type="radio" name="radioFloor" id="yes"
-              value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <label class="btn btn-secondary"><input onclick=" displayFloor()" type="radio" name="radioFloor" id="no" value="no" />No</label>
-        </form>
-        
-      </div>
-    </div>
-    <div class="Falsefloor" id="falsefloor">
-      <div class="card text-center">
-        <div class="card-header">
-          <h4>Dimensions:</h4>
-
-        </div>
-
-        <div class="card-body">
-          <div>
-            <table class="table">
-              <tr>
-                <td>
-                  <p>Height(m): </p>
-                </td>
-                <td>
-                  <input class="form-control w-50" oninput="volumeTotal()" onchange="falseFloor()" type="number"
-                    id="heightFloor" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
-                    required autocomplete="off"/>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Volume (floor)</p>
-                </td>
-                <td>
-                  <span class="output" id="volumeFloor" onchange="volumeTotal1()"></span>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
       <br>
-    <button class="btn btn-warning" onclick="revert3()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change4()" type="button" class="btn btn-primary">Next</button>
-  </div>
-
-  <div class="section" id="section5">
-    <div class="ceiling">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Suspended Ceiling (additional)</h3>
-        </div>
-        <div class="card-text">
-          <p>Is false Ceiling present?</p>
-        </div>
-        <form class="checkbox" id="radioCeiling">
-          <label class="btn btn-secondary"><input onclick="displayCeiling()" type="radio" name="radioCeiling" id="yes"
-              value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <label class="btn btn-secondary"><input onclick="displayCeiling()" type="radio" name="radioCeiling" id="no" value="no" />No</label>
-        </form>
-      </div>
-
+      <button class="btn btn-warning" onclick="revert2()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change3()" type="button" class="btn btn-primary">Next</button>
     </div>
-    <div class="suspendedCeiling" id="falseceiling">
-      <div class="card text-center">
-        <div class="card-header">
-          <h4>Dimensions:</h4>
-        </div>
-        <div class="card-body">
-          <table class="table">
-            <tr>
-              <td>
-                <p>Height(m): </p>
-              </td>
-              <td>
-                <input class="form-control w-50" oninput="volumeTotal()" onchange="ceiling()" type="number"
-                  id="heightCeiling" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
-                  required autocomplete="off"/>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Volume (Ceiling)</p>
-              </td>
-              <td>
-                <span class="output" id="volumeCeiling" onchange="volumeTotal1()" /></span>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
 
-    </div>
-    <br>
-      <br>
-    <button class="btn btn-warning" onclick="revert4()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change5()" type="button" class="btn btn-primary">Next</button>
-  </div>
-
-  <div class="section" id="section6">
-    <div class="totVolume" id="totVolume">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Total Volume</h3>
-        </div>
-        <div class="card-body">
-          <table class="table">
-            <tr>
-              <td id="volumetotal">
-                <p>Total Volume: </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="output" id="totalVolume"></span>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-    </div>
-    <br>
-      <br>
-    <button class="btn btn-warning" onclick="revert5()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change6()" type="button" class="btn btn-primary">Next</button>
-  </div>
-
-  <div class="section" id="section7">
-    <div class="ventilation">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Ventilation</h3>
-        </div>
-
-
-        <div class="card-text">
-          <p>Is ventilation present?</p>
-        </div>
-        <form class="checkbox" id="radioventilation">
-          <label class="btn btn-secondary"><input onclick=" displayCirculation()" type="radio" name="radioVentilation" id="yes"
-              value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <label class="btn btn-secondary"><input onclick=" displayCirculation()" type="radio" name="radioVentilation" id="no"
-              value="no" />No</label>
-        </form>
-      </div>
-    </div>
-    <div class="circulation">
-      <form class="checkbox" id="radiocirculation">
-        <p>Ventilation Type:</p>
-        <label class="btn btn-secondary"><input onclick="displayVolume()" type="radio" name="radioCirculation" id="yes"
-            value="air_circulation" />Air Circulation</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <label class="btn btn-secondary"><input onclick="displayVolume()" type="radio" name="radioCirculation" id="no" value="fresh_air" />Fresh
-          Air</label><br>
-      </form>
-      <div id="volumeAir">
+    <div class="section" id="section4">
+      <div class="floor">
         <div class="card text-center">
-          <div class="card-heading">
+          <div class="card-header">
+            <h3>False floor (additional)</h3>
+          </div>
+          <div class="card-text">
+            <p>Is false floor Present?</p>
+          </div>
+          <form class="checkbox" id="radiofloor">
+            <label class="btn btn-secondary"><input onclick="displayFloor()" type="radio" name="radioFloor" id="yes"
+                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="btn btn-secondary"><input onclick=" displayFloor()" type="radio" name="radioFloor" id="no"
+                value="no" />No</label>
+          </form>
+
+        </div>
+      </div>
+      <div class="Falsefloor" id="falsefloor">
+        <div class="card text-center">
+          <div class="card-header">
+            <h4>Dimensions:</h4>
+
+          </div>
+
+          <div class="card-body">
+            <div>
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Height(m): </p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" oninput="volumeTotal()" onchange="falseFloor()" type="number"
+                      id="heightFloor" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
+                      required autocomplete="off" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Volume (floor)</p>
+                  </td>
+                  <td>
+                    <span class="output" id="volumeFloor" onchange="volumeTotal1()"></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <button class="btn btn-warning" onclick="revert3()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change4()" type="button" class="btn btn-primary">Next</button>
+    </div>
+
+    <div class="section" id="section5">
+      <div class="ceiling">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Suspended Ceiling (additional)</h3>
+          </div>
+          <div class="card-text">
+            <p>Is false Ceiling present?</p>
+          </div>
+          <form class="checkbox" id="radioCeiling">
+            <label class="btn btn-secondary"><input onclick="displayCeiling()" type="radio" name="radioCeiling" id="yes"
+                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="btn btn-secondary"><input onclick="displayCeiling()" type="radio" name="radioCeiling" id="no"
+                value="no" />No</label>
+          </form>
+        </div>
+
+      </div>
+      <div class="suspendedCeiling" id="falseceiling">
+        <div class="card text-center">
+          <div class="card-header">
             <h4>Dimensions:</h4>
           </div>
           <div class="card-body">
             <table class="table">
               <tr>
                 <td>
-                  <p>Volume of Fresh Air(m3)</p>
+                  <p>Height(m): </p>
                 </td>
                 <td>
-                  <input class="form-control w-50" type="number" id="volAir" class="input" placeholder="0.00" min="0"
-                    oninput="validity.valid||(value='');" required autocomplete="off"/>
+                  <input class="form-control w-50" oninput="volumeTotal()" onchange="ceiling()" type="number"
+                    id="heightCeiling" class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');"
+                    required autocomplete="off" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume (Ceiling)</p>
+                </td>
+                <td>
+                  <span class="output" id="volumeCeiling" onchange="volumeTotal1()" /></span>
                 </td>
               </tr>
             </table>
           </div>
         </div>
+
       </div>
-    </div>
-    <br>
       <br>
-    <button class="btn btn-warning" onclick="revert6()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change7()" type="button" class="btn btn-primary">Next</button>
-  </div>
+      <br>
+      <button class="btn btn-warning" onclick="revert4()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change5()" type="button" class="btn btn-primary">Next</button>
+    </div>
 
-  <div class="section" id="section8">
-    <div class="outsideWalls">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Outside Walls</h3>
-        </div>
-        <div class="card-text">
-          <p>How many outside walls are present? </p>
+    <div class="section" id="section6">
+      <div class="totVolume" id="totVolume">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Total Volume</h3>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <tr>
+                <td id="volumetotal">
+                  <p>Total Volume: </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="output" id="totalVolume"></span>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
 
-        <div class="checkbox">
-          <form class="checkbox" id="radiowalls">
-            <label class="btn btn-secondary w-50"><input onclick="displayInsulation();" type="radio" name="radioWalls" id="wall0"
-                value="0" />None</label><br>
-            <label class="btn btn-secondary w-50"><input onclick="displayInsulation();" type="radio" name="radioWalls" id="wall1"
-                value="1" />One</label><br>
-            <label class="btn btn-secondary w-50"><input onclick="displayInsulation()" type="radio" name="radioWalls" id="wall2"
-                value="2" />Two</label><br>
-            <label class="btn btn-secondary w-50"><input onclick="displayInsulation()" type="radio" name="radioWalls" id="wall3"
-                value="3" />Three</label><br>
-            <label class="btn btn-secondary w-50"><input onclick="displayInsulation()" type="radio" name="radioWalls" id="wall4"
-                value="4" />Four</label><br>
+      </div>
+      <br>
+      <br>
+      <button class="btn btn-warning" onclick="revert5()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change6()" type="button" class="btn btn-primary">Next</button>
+    </div>
+
+    <div class="section" id="section7">
+      <div class="ventilation">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Ventilation</h3>
+          </div>
+
+
+          <div class="card-text">
+            <p>Is ventilation present?</p>
+          </div>
+          <form class="checkbox" id="radioventilation">
+            <label class="btn btn-secondary"><input onclick=" displayCirculation()" type="radio" name="radioVentilation"
+                id="yes" value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label class="btn btn-secondary"><input onclick=" displayCirculation()" type="radio" name="radioVentilation"
+                id="no" value="no" />No</label>
           </form>
-          <br>
-          <div class="insulation" id="insulation">
-
+        </div>
+      </div>
+      <div class="circulation">
+        <form class="checkbox" id="radiocirculation">
+          <p>Ventilation Type:</p>
+          <label class="btn btn-secondary"><input onclick="displayVolume()" type="radio" name="radioCirculation"
+              id="yes" value="air_circulation" />Air Circulation</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="btn btn-secondary"><input onclick="displayVolume()" type="radio" name="radioCirculation" id="no"
+              value="fresh_air" />Fresh
+            Air</label><br>
+        </form>
+        <div id="volumeAir">
+          <div class="card text-center">
             <div class="card-heading">
-              <h4>Shielding:</h4>
+              <h4>Dimensions:</h4>
             </div>
-
-            <form class="checkbox" id="insulationtype">
-              <label class="btn btn-secondary"><input type="radio" name="insulationType" id="wallnone"
-                  value="none" />None</label>&nbsp;&nbsp;&nbsp;
-              <label class="btn btn-secondary"><input type="radio" name="insulationType" id="wallmiddle"
-                  value="middle" />Middle</label>&nbsp;&nbsp;&nbsp;
-              <label class="btn btn-secondary"><input type="radio" name="insulationType" id="wallstrong"
-                  value="strong" />Strong</label>&nbsp;&nbsp;&nbsp;
-            </form>
+            <div class="card-body">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Volume of Fresh Air(m3)</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" type="number" id="volAir" class="input" placeholder="0.00" min="0"
+                      oninput="validity.valid||(value='');" required autocomplete="off" />
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
-          <div class="windLoad">
-            <div class="card text-center">
-              <div class="card-header">
-                <h3>Wind Load/ Wind Protection</h3>
+        </div>
+      </div>
+      <br>
+      <br>
+      <button class="btn btn-warning" onclick="revert6()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change7()" type="button" class="btn btn-primary">Next</button>
+    </div>
+
+    <div class="section" id="section8">
+      <div class="outsideWalls">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Outside Walls</h3>
+          </div>
+          <div class="card-text">
+            <p>How many outside walls are present? </p>
+          </div>
+
+          <div class="checkbox">
+            <form class="checkbox" id="radiowalls">
+              <label class="btn btn-secondary w-50"><input onclick="displayInsulation();" type="radio" name="radioWalls"
+                  id="wall0" value="0" />None</label><br>
+              <label class="btn btn-secondary w-50"><input onclick="displayInsulation();" type="radio" name="radioWalls"
+                  id="wall1" value="1" />One</label><br>
+              <label class="btn btn-secondary w-50"><input onclick="displayInsulation()" type="radio" name="radioWalls"
+                  id="wall2" value="2" />Two</label><br>
+              <label class="btn btn-secondary w-50"><input onclick="displayInsulation()" type="radio" name="radioWalls"
+                  id="wall3" value="3" />Three</label><br>
+              <label class="btn btn-secondary w-50"><input onclick="displayInsulation()" type="radio" name="radioWalls"
+                  id="wall4" value="4" />Four</label><br>
+            </form>
+            <br>
+            <div class="insulation" id="insulation">
+
+              <div class="card-heading">
+                <h4>Shielding:</h4>
               </div>
-              <div class="card-body">
-                <form class="checkbox" id="windload">
-                  <label class="btn btn-secondary"><input type="radio" name="windLoad" id="windnone" value="none" />None</label>&nbsp;&nbsp;&nbsp;
-                  <label class="btn btn-secondary"><input type="radio" name="windLoad" id="windmiddle"
-                      value="middle" />Middle</label>&nbsp;&nbsp;&nbsp;
-                  <label class="btn btn-secondary"><input type="radio" name="windLoad" id="windstrong"
-                      value="strong" />Strong</label>&nbsp;&nbsp;&nbsp;
-                </form>
+
+              <form class="checkbox" id="insulationtype">
+                <label class="btn btn-secondary"><input type="radio" name="insulationType" id="wallnone"
+                    value="none" />None</label>&nbsp;&nbsp;&nbsp;
+                <label class="btn btn-secondary"><input type="radio" name="insulationType" id="wallmiddle"
+                    value="middle" />Middle</label>&nbsp;&nbsp;&nbsp;
+                <label class="btn btn-secondary"><input type="radio" name="insulationType" id="wallstrong"
+                    value="strong" />Strong</label>&nbsp;&nbsp;&nbsp;
+              </form>
+            </div>
+            <div class="windLoad">
+              <div class="card text-center">
+                <div class="card-header">
+                  <h3>Wind Load/ Wind Protection</h3>
+                </div>
+                <div class="card-body">
+                  <form class="checkbox" id="windload">
+                    <label class="btn btn-secondary"><input type="radio" name="windLoad" id="windnone"
+                        value="none" />None</label>&nbsp;&nbsp;&nbsp;
+                    <label class="btn btn-secondary"><input type="radio" name="windLoad" id="windmiddle"
+                        value="middle" />Middle</label>&nbsp;&nbsp;&nbsp;
+                    <label class="btn btn-secondary"><input type="radio" name="windLoad" id="windstrong"
+                        value="strong" />Strong</label>&nbsp;&nbsp;&nbsp;
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <br>
       <br>
-    <button class="btn btn-warning" onclick="revert7()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change8()" type="button" class="btn btn-primary">Next</button>
-  </div>
+      <br>
+      <button class="btn btn-warning" onclick="revert7()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change8()" type="button" class="btn btn-primary">Next</button>
+    </div>
 
-  <div class="section" id="section9">
-    <div class="wallLayers">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Openings (Sluice / Door / Door Fast Opening)</h3>
-        </div>
-        <div class="card-body">
-          <form class="checkbox" id="radioopenings">
-            <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings" id="sluice"
-                value="sluice" />Sluice</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings" id="door"
-                value="door" />Door</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings" id="doorFast"
-                value="doorFast" />Door Fast Opening</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </form>
-          <br>
-          <form class="checkbox" id="sluicevolume">
-            <div class="card-text">
-              <p>Give volume manually?</p>
+    <div class="section" id="section9">
+      <div class="wallLayers">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Openings (Sluice / Door / Door Fast Opening)</h3>
+          </div>
+          <div class="card-body">
+            <form class="checkbox" id="radioopenings">
+              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
+                  id="sluice" value="sluice" />Sluice</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
+                  id="door" value="door" />Door</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
+                  id="doorFast" value="doorFast" />Door Fast Opening</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </form>
+            <br>
+            <form class="checkbox" id="sluicevolume">
+              <div class="card-text">
+                <p>Give volume manually?</p>
+              </div>
+              <label class="btn btn-secondary"><input onclick="manualSluice()" type="radio" name="sluiceVolume" id=""
+                  value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="btn btn-secondary"><input onclick="manualSluice()" type="radio" name="sluiceVolume" id=""
+                  value="no" />No</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </form><br>
+            <div class="" id="manualSluice">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Volume(Sluice):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" onchange="" type="number" id="volumeSluice1" class="input"
+                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                  </td>
+                </tr>
+              </table>
             </div>
-            <label class="btn btn-secondary"><input onclick="manualSluice()" type="radio" name="sluiceVolume" id=""
-                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label class="btn btn-secondary"><input onclick="manualSluice()" type="radio" name="sluiceVolume" id=""
-                value="no" />No</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </form><br>
-          <div class="" id="manualSluice">
+            <div class="" id="tableOpenings">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Width(m):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" onchange="" type="number" id="widthOpening" class="input"
+                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Height(m):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" onchange="" type="number" id="heightOpening" class="input"
+                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="" id="tableSluice">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Surface Area</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" onchange="sluiceVolume()" type="number" id="surfaceSluice"
+                      class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Height(m):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" onchange="sluiceVolume()" type="number" id="heightSluice"
+                      class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Volume</p>
+                  </td>
+                  <td>
+                    <span class="output" id="volumeSluice" /></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
             <table class="table">
               <tr>
                 <td>
-                  <p>Volume(Sluice):</p>
+                  <p>Openings (1 - 20)</p>
                 </td>
                 <td>
-                  <input class="form-control w-50" onchange="" type="number" id="volumeSluice1" class="input"
-                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                  <input onchange="displayLayers()" class="form-control w-50" type="number" id="wall-layers"
+                    class="input" min="1" max="20" required oninput="validity.valid||(value='');" placeholder="0"
+                    required />
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="wallData">
+        <div class="card text-center" id="wallData1">
+          <div class="card-body">
+            <div class="card-heading">
+              <h2>Opening 1</h2>
+              <br>
+            </div>
+            <table class="table">
+              <h6 style="font-weight: bold;">Sluice:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume(m3)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Fast on door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
                 </td>
               </tr>
             </table>
           </div>
-          <div class="" id="tableOpenings">
+        </div>
+
+        <div class="card text-center" id="wallData2">
+          <div class="card-body">
+            <div class="card-heading">
+              <h2>Opening 2</h2>
+              <br>
+            </div>
             <table class="table">
+              <h6 style="font-weight: bold;">Sluice:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume(m3)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Fast on door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="card text-center" id="wallData3">
+          <div class="card-body">
+            <div class="card-heading">
+              <h2>Opening 3</h2>
+              <br>
+            </div>
+            <table class="table">
+              <h6 style="font-weight: bold;">Sluice:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume(m3)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Fast on door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="card text-center" id="wallData4">
+          <div class="card-body">
+            <div class="card-heading">
+              <h2>Opening 4</h2>
+              <br>
+            </div>
+            <table class="table">
+              <h6 style="font-weight: bold;">Sluice:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume(m3)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Fast on door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="card text-center" id="wallData5">
+          <div class="card-body">
+            <div class="card-heading">
+              <h2>Opening 5</h2>
+              <br>
+            </div>
+            <table class="table">
+              <h6 style="font-weight: bold;">Sluice:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume(m3)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Fast on door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="card text-center" id="wallData6">
+          <div class="card-body">
+            <div class="card-heading">
+              <h2>Opening 6</h2>
+              <br />
+            </div>
+            <table class="table">
+              <h6 style="font-weight: bold;">Sluice:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Volume(m3)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+            <table class="table">
+              <h6 style="font-weight: bold;">Fast on door:</h6>
+              <tr>
+                <td>
+                  <p>Surface Area(m2)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
+                    oninput="validity.valid||(value='');" required></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Duration(s)</p>
+                </td>
+                <td>
+                  <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
+                    oninput="validity.valid||(value='');" required>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <button class="btn btn-warning" onclick="revert8()" type="button" class="btn btn-warning">Previous</button>
+        <button class="btn btn-primary" onclick="change9()" type="button" class="btn btn-primary">Next</button>
+      </div>
+      <br>
+      <br>
+      <!-- <button class="btn btn-warning" onclick="revert8()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change9()" type="button" class="btn btn-primary">Next</button> -->
+    </div>
+
+    <div class="section" id="section10">
+      <div class="equipment">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Equipment room</h3>
+          </div>
+          <div class="card-body">
+            <div class="card-text">
+              <p>Does the storage have an equipment room?</p>
+            </div>
+            <form class="checkbox" id="radioequipment">
+              <label class="btn btn-secondary"><input onclick="displayEquipment()" type="radio" name="radioEquipment"
+                  id="yes" value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="btn btn-secondary"><input onclick="displayEquipment()" type="radio" name="radioEquipment"
+                  id="no" value="no" />No</label>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="equipment-dimensions" id="equipment-dimensions">
+        <div class="card text-center">
+          <div class="card-header">
+            <h2>Dimensions</h2>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <tr>
+                <td>
+                  <p>Length(m): </p>
+                </td>
+                <td>
+                  <input class="form-control w-50" onchange="equipmentSurface()" type="number" id="length-equipment"
+                    class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                </td>
+              </tr>
               <tr>
                 <td>
                   <p>Width(m):</p>
                 </td>
                 <td>
-                  <input class="form-control w-50" onchange="" type="number" id="widthOpening" class="input"
-                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Height(m):</p>
-                </td>
-                <td>
-                  <input class="form-control w-50" onchange="" type="number" id="heightOpening" class="input"
-                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div class="" id="tableSluice">
-            <table class="table">
-              <tr>
-                <td>
-                  <p>Surface Area</p>
-                </td>
-                <td>
-                  <input class="form-control w-50" onchange="sluiceVolume()" type="number" id="surfaceSluice"
+                  <input class="form-control w-50" onchange="equipmentSurface()" type="number" id="width-equipment"
                     class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
                 </td>
               </tr>
@@ -586,831 +1167,269 @@
                   <p>Height(m):</p>
                 </td>
                 <td>
-                  <input class="form-control w-50" onchange="sluiceVolume()" type="number" id="heightSluice"
+                  <input class="form-control w-50" onchange="equipmentVolume()" type="number" id="height-equipment"
                     class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
                 </td>
               </tr>
               <tr>
                 <td>
-                  <p>Volume</p>
+                  <p>Temperature(°C)</p>
                 </td>
                 <td>
-                  <span class="output" id="volumeSluice" /></span>
+                  <input class="form-control w-50" onchange="" type="number" id="temp-equipment" class="input"
+                    placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
                 </td>
               </tr>
-            </table>
-          </div>
-          <table class="table">
-            <tr>
-              <td>
-                <p>Openings (1 - 20)</p>
-              </td>
-              <td>
-                <input onchange="displayLayers()" class="form-control w-50" type="number" id="wall-layers" class="input"
-                  min="1" max="20" required oninput="validity.valid||(value='');" placeholder="0" required />
-              </td>
-            </tr>
-
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="wallData">
-      <div class="card text-center" id="wallData1">
-        <div class="card-body">
-          <div class="card-heading">
-            <h2>Opening 1</h2>
-            <br>
-          </div>
-          <table class="table">
-            <h6 style="font-weight: bold;">Sluice:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Volume(m3)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Fast on door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="card text-center" id="wallData2">
-        <div class="card-body">
-          <div class="card-heading">
-            <h2>Opening 2</h2>
-            <br>
-          </div>
-          <table class="table">
-            <h6 style="font-weight: bold;">Sluice:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Volume(m3)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Fast on door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="card text-center" id="wallData3">
-        <div class="card-body">
-          <div class="card-heading">
-            <h2>Opening 3</h2>
-            <br>
-          </div>
-          <table class="table">
-            <h6 style="font-weight: bold;">Sluice:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Volume(m3)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Fast on door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="card text-center" id="wallData4">
-        <div class="card-body">
-          <div class="card-heading">
-            <h2>Opening 4</h2>
-            <br>
-          </div>
-          <table class="table">
-            <h6 style="font-weight: bold;">Sluice:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Volume(m3)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Fast on door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="card text-center" id="wallData5">
-        <div class="card-body">
-          <div class="card-heading">
-            <h2>Opening 5</h2>
-            <br>
-          </div>
-          <table class="table">
-            <h6 style="font-weight: bold;">Sluice:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Volume(m3)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Fast on door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="card text-center" id="wallData6">
-        <div class="card-body">
-          <div class="card-heading">
-            <h2>Opening 6</h2>
-            <br />
-          </div>
-          <table class="table">
-            <h6 style="font-weight: bold;">Sluice:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Volume(m3)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-          <table class="table">
-            <h6 style="font-weight: bold;">Fast on door:</h6>
-            <tr>
-              <td>
-                <p>Surface Area(m2)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0.00" min="0"
-                  oninput="validity.valid||(value='');" required></i>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Duration(s)</p>
-              </td>
-              <td>
-                <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
-                  oninput="validity.valid||(value='');" required>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-    <br>
-      <br>
-    <button class="btn btn-warning" onclick="revert8()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change9()" type="button" class="btn btn-primary">Next</button>
-  </div>
-
-  <div class="section" id="section10">
-    <div class="equipment">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Equipment room</h3>
-        </div>
-        <div class="card-body">
-          <div class="card-text">
-            <p>Does the storage have an equipment room?</p>
-          </div>
-          <form class="checkbox" id="radioequipment">
-            <label class="btn btn-secondary"><input onclick="displayEquipment()" type="radio" name="radioEquipment" id="yes"
-                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label class="btn btn-secondary"><input onclick="displayEquipment()" type="radio" name="radioEquipment" id="no"
-                value="no" />No</label>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="equipment-dimensions" id="equipment-dimensions">
-      <div class="card text-center">
-        <div class="card-header">
-          <h2>Dimensions</h2>
-        </div>
-        <div class="card-body">
-          <table class="table">
-            <tr>
-              <td>
-                <p>Length(m): </p>
-              </td>
-              <td>
-                <input class="form-control w-50" onchange="equipmentSurface()" type="number" id="length-equipment"
-                  class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Width(m):</p>
-              </td>
-              <td>
-                <input class="form-control w-50" onchange="equipmentSurface()" type="number" id="width-equipment"
-                  class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Height(m):</p>
-              </td>
-              <td>
-                <input class="form-control w-50" onchange="equipmentVolume()" type="number" id="height-equipment"
-                  class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Temperature(°C)</p>
-              </td>
-              <td>
-                <input class="form-control w-50" onchange="" type="number" id="temp-equipment" class="input"
-                  placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Surface Area (Equipment room) </p>
-              </td>
-              <td>
-                <span class="output" id="areaEquipment"></span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Volume (Equipment room) </p>
-              </td>
-              <td>
-                <span class="output" id="volumeEquipment" /></span>
-              </td>
-            </tr>
-
-          </table>
-        </div>
-      </div>
-    </div>
-    <br>
-      <br>
-    <button class="btn btn-warning" onclick="revert9()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change10()" type="button" class="btn btn-primary">Next</button>
-  </div>
-
-  <div class="section" id="section11">
-    <div class="storage">
-      <div class="card text-center">
-        <div class="card-header">
-          <h3>Protected Material</h3>
-        </div>
-        <div class="card-body">
-          <form class="checkbox" id="radiostorage">
-            <label class="btn btn-secondary"><input onclick="displayStorage()" type="radio" name="radioStorage" id="yes"
-                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label class="btn btn-secondary"><input onclick="displayStorage()" type="radio" name="radioStorage"" id=" no" value="no" />No</label>
-          </form>
-          <br><br>
-          <div class="storageType" id="storageType">
-            <table class="table">
               <tr>
                 <td>
-                  <p>Volume percentage in stock(m3)</p>
+                  <p>Surface Area (Equipment room) </p>
                 </td>
                 <td>
-                  <input class="form-control w-50" type="number" id="stockpercentage" class="input" min="1" required
-                    oninput="validity.valid||(value='');" placeholder="0" required />
+                  <span class="output" id="areaEquipment"></span>
                 </td>
               </tr>
-            </table>
-          </div>
-          <br>
-          <div class="oxygenContent" id="oxygenContent">
-            <table class="table">
               <tr>
                 <td>
-                  <p>Remaining Oxygen Content(10% - 21%)</p>
+                  <p>Volume (Equipment room) </p>
                 </td>
                 <td>
-                  <input class="form-control w-50" type="number" id="oxygenpercentage" class="input" min="10" max="21"
-                    required oninput="validity.valid||(value='');" placeholder="0" required />
+                  <span class="output" id="volumeEquipment" /></span>
                 </td>
               </tr>
+
             </table>
           </div>
         </div>
       </div>
-    </div>
-    <br>
       <br>
-    <button class="btn btn-warning" onclick="revert10()" type="button" class="btn btn-warning">Previous</button>
-    <button class="btn btn-primary" onclick="change11()" type="button" class="btn btn-primary">Next</button>
-  </div>
+      <br>
+      <button class="btn btn-warning" onclick="revert9()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change10()" type="button" class="btn btn-primary">Next</button>
+    </div>
 
-  <div class="section" id="section12">
-    <div class="openings">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-header">
-                <h3>Operating Hours</h3>
+    <div class="section" id="section11">
+      <div class="storage">
+        <div class="card text-center">
+          <div class="card-header">
+            <h3>Protected Material</h3>
+          </div>
+          <div class="card-body">
+            <form class="checkbox" id="radiostorage">
+              <label class="btn btn-secondary"><input onclick="displayStorage()" type="radio" name="radioStorage"
+                  id="yes" value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="btn btn-secondary"><input onclick="displayStorage()" type="radio" name="radioStorage"" id="
+                  no" value="no" />No</label>
+            </form>
+            <br><br>
+            <div class="storageType" id="storageType">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Volume percentage in stock(m3)</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" type="number" id="stockpercentage" class="input" min="1" required
+                      oninput="validity.valid||(value='');" placeholder="0" required />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <br>
+            <div class="oxygenContent" id="oxygenContent">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Remaining Oxygen Content(10% - 21%)</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" type="number" id="oxygenpercentage" class="input" min="10" max="21"
+                      required oninput="validity.valid||(value='');" placeholder="0" required />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <button class="btn btn-warning" onclick="revert10()" type="button" class="btn btn-warning">Previous</button>
+      <button class="btn btn-primary" onclick="change11()" type="button" class="btn btn-primary">Next</button>
+    </div>
+
+    <div class="section" id="section12">
+      <div class="openings">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card text-center">
+                <div class="card-header">
+                  <h3>Operating Hours</h3>
+                </div>
+                <div class="card-text">
+                  <p>Hours of operation per day</p>
+                </div>
+                <br>
+                <br>
+                <div class="card-body" id="open-hours">
+                  <table class="table">
+                    <tr>
+                      <td>
+                        <p>Monday</p>
+                      </td>
+                      <td>
+                        <input onchange="avgOpenings()" class="form-control w-50" type="number" id="monday"
+                          class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
+                          required autocomplete="off" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Tuesday</p>
+                      </td>
+                      <td>
+                        <input onchange="avgOpenings()" class="form-control w-50" type="number" id="tuesday"
+                          class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
+                          required autocomplete="off" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Wednesday</p>
+                      </td>
+                      <td>
+                        <input onchange="avgOpenings()" class="form-control w-50" type="number" id="wednesday"
+                          class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
+                          required autocomplete="off" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Thursday</p>
+                      </td>
+                      <td>
+                        <input onchange="avgOpenings()" class="form-control w-50" type="number" id="thursday"
+                          class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
+                          required autocomplete="off" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Friday</p>
+                      </td>
+                      <td>
+                        <input onchange="avgOpenings()" class="form-control w-50" type="number" id="friday"
+                          class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
+                          required autocomplete="off" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Saturday</p>
+                      </td>
+                      <td>
+                        <input onchange="avgOpenings()" class="form-control w-50" type="number" id="saturday"
+                          class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
+                          required autocomplete="off" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Sunday</p>
+                      </td>
+                      <td>
+                        <input onchange="avgOpenings()" class="form-control w-50" type="number" id="sunday"
+                          class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
+                          required autocomplete="off" />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               </div>
-              <div class="card-text">
-                <p>Hours of operation per day</p>
-              </div>
-              <br>
-              <br>
-              <div class="card-body" id="open-hours">
-                <table class="table">
-                  <tr>
-                    <td>
-                      <p>Monday</p>
-                    </td>
-                    <td>
-                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="monday" class="input"
-                        min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required autocomplete="off" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Tuesday</p>
-                    </td>
-                    <td>
-                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="tuesday" class="input"
-                        min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required autocomplete="off"/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Wednesday</p>
-                    </td>
-                    <td>
-                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="wednesday"
-                        class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
-                        required autocomplete="off"/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Thursday</p>
-                    </td>
-                    <td>
-                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="thursday"
-                        class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
-                        required autocomplete="off"/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Friday</p>
-                    </td>
-                    <td>
-                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="friday" class="input"
-                        min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required autocomplete="off"/>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Saturday</p>
-                    </td>
-                    <td>
-                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="saturday"
-                        class="input" min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0"
-                        required autocomplete="off"/>
-                    </td>
-                  </tr>
-                  <tr>
+            </div>
+            <div class="col">
+              <div class="card text-center">
+                <div class="card-header">
+                  <h3>Average openings</h3>
+                </div>
+                <div class="card-text">
+                  <p>As per operation hour</p>
+                </div>
+                <div class="card-body">
+                  <table class="table" id="table_averageOpenings">
+                    <tr>
+                      <td>
+                        <p>Monday</p>
+                      </td>
+                      <td>
+                        <p class="output" id="avgMonday"></p>
+                      </td>
+                    </tr>
+                    <hr style="text-decoration: underline solid black;">
+                    <tr>
+                      <td>
+                        <p>Tuesday</p>
+                      </td>
+                      <td>
+                        <p class="output" id="avgTuesday"></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Wednesday</p>
+                      </td>
+                      <td>
+                        <p class="output" id="avgWednesday"></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Thursday</p>
+                      </td>
+                      <td>
+                        <p class="output" id="avgThursday"></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Friday</p>
+                      </td>
+                      <td>
+                        <p class="output" id="avgFriday"></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Saturday</p>
+                      </td>
+                      <td>
+                        <p class="output" id="avgSaturday"></p>
+                      </td>
+                    </tr>
                     <td>
                       <p>Sunday</p>
                     </td>
                     <td>
-                      <input onchange="avgOpenings()" class="form-control w-50" type="number" id="sunday" class="input"
-                        min="0" max="24" required oninput="validity.valid||(value='');" placeholder="0" required autocomplete="off"/>
+                      <p class="output" id="avgSunday"></p>
                     </td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card text-center">
-              <div class="card-header">
-                <h3>Average openings</h3>
-              </div>
-              <div class="card-text">
-                <p>As per operation hour</p>
-              </div>
-              <div class="card-body">
-                <table class="table" id="table_averageOpenings">
-                  <tr>
-                    <td>
-                      <p>Monday</p>
-                    </td>
-                    <td>
-                      <p class="output" id="avgMonday"></p>
-                    </td>
-                  </tr>
-                  <hr style="text-decoration: underline solid black;">
-                  <tr>
-                    <td>
-                      <p>Tuesday</p>
-                    </td>
-                    <td>
-                      <p class="output" id="avgTuesday"></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Wednesday</p>
-                    </td>
-                    <td>
-                      <p class="output" id="avgWednesday"></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Thursday</p>
-                    </td>
-                    <td>
-                      <p class="output" id="avgThursday"></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Friday</p>
-                    </td>
-                    <td>
-                      <p class="output" id="avgFriday"></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Saturday</p>
-                    </td>
-                    <td>
-                      <p class="output" id="avgSaturday"></p>
-                    </td>
-                  </tr>
-                  <td>
-                    <p>Sunday</p>
-                  </td>
-                  <td>
-                    <p class="output" id="avgSunday"></p>
-                  </td>
-                </table>
-              </div>
+                  </table>
+                </div>
 
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <br>
       <br>
-    <button class="btn btn-dark" id="demo">Download Excel Sheet</button>
-    <button class="btn btn-warning" onclick="revert11()" type="button" class="btn btn-warning">Previous</button>
+      <br>
+      <button class="btn btn-dark" id="demo">Download Excel Sheet</button>
+      <button class="btn btn-warning" onclick="revert11()" type="button" class="btn btn-warning">Previous</button>
 
+    </div>
   </div>
+  <!-- Site footer -->
+  <div class="footer">
+    <P>Copyright &copy; 2022 Kamsware. Made By Victor<a href="mailto:victormichenim@gmail.com" class="email_button"><i class="fa fa-envelope"></i></a> </P> 
   </div>
 
   </div>

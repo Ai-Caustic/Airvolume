@@ -1,14 +1,9 @@
-* {
-  background-color: white;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: fit-content;
+body {
+  min-height: 100%;
+  margin: 0;
 }
 
-* p {
-  padding-top: 20px;
+p {
   font-size: 20px;
   font-family: "Signika", sans-serif;
 }
@@ -68,35 +63,46 @@ form {
   font-size: large;
 }
 .section {
-  /*
-  border: 10px solid;
-   color: darkslategrey;
-   */
-  height: 100%;
-}
+  /* border: 10px solid;
+  color: darkslategrey; */
 
-.prevSection {
-  background-color: tomato;
-  border-radius: 8px;
-  width: 100px;
-  text-align: center;
-  font-family: "Signika", sans-serif;
-  padding-bottom: 7px;
-  margin-top: 10%;
-  margin-right: 50px;
-}
-
-.nextSection {
-  background-color: aqua;
-  border-radius: 8px;
-  width: 100px;
-  text-align: center;
-  font-family: "Signika", sans-serif;
-  padding-bottom: 7px;
-  margin-top: 10%;
-  margin-left: 50px;
-  padding-top: 4px;
+  /* height: 100%; */
+  position: relative;
+  overflow: auto;
 }
 
 #table_averageOpenings span {
+}
+
+.saved {
+  float: right;
+  color: limegreen;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.saving {
+  color: gray;
+}
+
+.footer {
+  position: fixed;
+  height: 30px;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: black;
+}
+.footer p {
+  padding-top: 10px;
+  font-family: "Signika", sans-serif;
+  color: white;
+  font-size: medium;
+  text-align: center;
+}
+.email_button {
+  margin-left: 5px;
+  font-size: medium;
+  color: white;
 }
