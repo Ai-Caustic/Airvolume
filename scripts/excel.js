@@ -2,10 +2,12 @@
 
 document.getElementById("demo").onclick = () => {
   //General Data
-
+  var owner = document.getElementById("projectOwner").value;
   var client = document.getElementById("Client").value;
   var projectName = document.getElementById("projectName").value;
-  var projectLo = document.getElementById("projectLo").value;
+  var projectDate = document.getElementById("projectDate").value;
+  var projectAddress = document.getElementById("address").value;
+  var projectStreet = document.getElementById("street").value;
   var city = document.getElementById("city").value;
   var country = document.getElementById("country").value;
 
@@ -93,9 +95,12 @@ document.getElementById("demo").onclick = () => {
   var data = [
     ["GENERAL DATA"],
     [],
+    ["Project Owner", owner],
     ["Client", client],
     ["Project Name", projectName],
-    ["Location", projectLo],
+    ["Date", projectDate],
+    ["Address", projectAddress],
+    ["Street", projectStreet],
     ["City", city],
     ["Country", country],
     [],

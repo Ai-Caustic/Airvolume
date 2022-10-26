@@ -32,6 +32,15 @@
               <table class="table">
                 <tr>
                   <td>
+                    <p>Project Owner</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" type="text" id="projectOwner" class="input"
+                      placeholder="Project Owner" required maxlength="40" autocomplete="name" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     <p>Client</p>
                   </td>
                   <td>
@@ -50,11 +59,29 @@
                 </tr>
                 <tr>
                   <td>
-                    <p>Location / site of project</p>
+                    <p>Date / Time </p>
                   </td>
                   <td>
-                    <input class="form-control w-50" type="text" id="projectLo" class="input" placeholder="Location"
-                      required maxlength="40" autocomplete="off" />
+                    <input class="form-control w-50" type="datetime-local" id="projectDate" class="input"
+                      placeholder="Date" required maxlength="40" autocomplete="off" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Address</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" type="" id="address" class="input" placeholder="Address" required
+                      maxlength="40" autocomplete="on" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Street</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" type="text" id="street" class="input" placeholder="Street" required
+                      maxlength="40" autocomplete="off" />
                   </td>
                 </tr>
                 <tr>
@@ -79,11 +106,8 @@
             </div>
           </div>
         </div>
+        <button class="btn btn-primary" onclick="change1()" type="button">Next</button>
       </div>
-      <br>
-      <br>
-      <div class="saved"></div>
-      <button class="btn btn-primary" onclick="change1()" type="button">Next</button>
     </div>
 
     <div class="section" id="section2">
@@ -1434,10 +1458,10 @@
   </div>
 
   </div>
-  <script src="public\scripts\excel.js"></script>
-  <script src="public\scripts\inputs.js"></script>
-  <script src="public\scripts\sections.js"></script>
-  <script src="public\scripts\calculations.js"></script>
+  <script src="scripts\excel.js"></script>
+  <script src="scripts\display.js"></script>
+  <script src="scripts\validation.js"></script>
+  <script src="scripts\calculations.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>

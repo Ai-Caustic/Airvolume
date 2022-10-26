@@ -14,16 +14,22 @@ function hidesections() {
 }
 
 function change1() {
+  owner = document.getElementById("projectOwner");
   client = document.getElementById("Client").value;
   projectName = document.getElementById("projectName").value;
-  projectLo = document.getElementById("projectLo").value;
+  projectDate = document.getElementById("projectDate").value;
+  projectAddresss = document.getElementById("address").value;
+  projectStreet = document.getElementById("street").value;
   city = document.getElementById("city").value;
   country = document.getElementById("country").value;
 
   if (
+    owner !== "" &&
     client !== "" &&
     projectName !== "" &&
-    projectLo !== "" &&
+    projectDate !== "" &&
+    projectAddresss !== "" &&
+    projectStreet !== "" &&
     city !== "" &&
     country !== ""
   ) {
