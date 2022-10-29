@@ -85,28 +85,17 @@ function revert2() {
 }
 
 function change3() {
-  var val = document.getElementById("radioroom");
-  manualSurface = document.getElementById("areaRoom1").value;
-  manualVolume = document.getElementById("volumeRoom1").value;
   length = document.getElementById("lengthRoom").value;
   width = document.getElementById("widthRoom").value;
   height = document.getElementById("heightRoom").value;
 
-  if (val.elements["radioRoom"].value == "manually") {
-    if (manualSurface !== "" && manualVolume !== "") {
-      document.getElementById("section4").style.display = "block";
-      document.getElementById("section3").style.display = "none";
-    } else {
-      window.alert("Please fill in the fields");
-    }
-  } else if (val.elements["radioRoom"].value == "compute") {
-    if (length !== "" && width !== "" && height !== "") {
-      document.getElementById("section4").style.display = "block";
-      document.getElementById("section3").style.display = "none";
-    } else {
-      window.alert("Please fill in the fields");
-    }
+  if (length !== "" && width !== "" && height !== "") {
+    document.getElementById("section4").style.display = "block";
+    document.getElementById("section3").style.display = "none";
+  } else {
+    window.alert("Please fill in the fields");
   }
+
   volumeTotal();
 }
 

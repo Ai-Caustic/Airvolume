@@ -14,8 +14,6 @@ function hidefield() {
   document.getElementById("equipment-dimensions").style.display = "none";
   document.getElementById("temperatureWarehouse").style.display = "none";
   document.getElementById("N50").style.display = "none";
-  document.getElementById("manualroom").style.display = "none";
-  document.getElementById("tableroom").style.display = "none";
   document.getElementById("storageType").style.display = "none";
   document.getElementById("tableOpenings").style.display = "none";
   document.getElementById("tableSluice").style.display = "none";
@@ -192,19 +190,19 @@ function displayStorage() {
   }
 }
 
-function displayRoom() {
-  var val = document.getElementById("radioroom");
+// function displayRoom() {
+//   var val = document.getElementById("radioroom");
 
-  console.log(val.elements["radioRoom"].value);
+//   console.log(val.elements["radioRoom"].value);
 
-  if (val.elements["radioRoom"].value == "manually") {
-    document.getElementById("manualroom").style.display = "block";
-    document.getElementById("tableroom").style.display = "none";
-  } else {
-    document.getElementById("manualroom").style.display = "none";
-    document.getElementById("tableroom").style.display = "block";
-  }
-}
+//   if (val.elements["radioRoom"].value == "manually") {
+//     document.getElementById("manualroom").style.display = "block";
+//     document.getElementById("tableroom").style.display = "none";
+//   } else {
+//     document.getElementById("manualroom").style.display = "none";
+//     document.getElementById("tableroom").style.display = "block";
+//   }
+// }
 
 function displayOpenings() {
   var val = document.getElementById("radioopenings");

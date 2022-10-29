@@ -27,48 +27,22 @@ function roomVolume() {
 
 function falseFloor() {
   heightFloor = document.getElementById("heightFloor").value;
-  manualSurface = document.getElementById("areaRoom1").value;
-  var val = document.getElementById("radioroom");
-
-  if (val.elements["radioRoom"].value == "compute") {
-    floorVolume = surfaceArea * heightFloor;
-    document.getElementById("volumeFloor").innerHTML = floorVolume + cubed;
-  } else if (val.elements["radioRoom"].value == "manually") {
-    floorVolume = manualSurface * heightFloor;
-    document.getElementById("volumeFloor").innerHTML = floorVolume + cubed;
-  }
+  floorVolume = surfaceArea * heightFloor;
+  document.getElementById("volumeFloor").innerHTML = floorVolume + cubed;
 }
 
 //Suspended Ceiling
 
 function ceiling() {
-  manualSurface = document.getElementById("areaRoom1").value;
   heightCeiling = document.getElementById("heightCeiling").value;
-  var val = document.getElementById("radioroom");
-
-  if (val.elements["radioRoom"].value == "compute") {
-    ceilingVolume = surfaceArea * heightCeiling;
-    document.getElementById("volumeCeiling").innerHTML = ceilingVolume + cubed;
-  } else if (val.elements["radioRoom"].value == "manually") {
-    ceilingVolume = manualSurface * heightCeiling;
-    document.getElementById("volumeCeiling").innerHTML = ceilingVolume + cubed;
-  }
+  ceilingVolume = surfaceArea * heightCeiling;
+  document.getElementById("volumeCeiling").innerHTML = ceilingVolume + cubed;
 }
 
 function volumeTotal() {
-  var val = document.getElementById("radioroom");
-  var manualVolume = document.getElementById("volumeRoom1").value;
-
-  if (val.elements["radioRoom"].value == "compute") {
-    totalVolume = volumeRoom + floorVolume + ceilingVolume;
-    document.getElementById("totalVolume").innerHTML = totalVolume + cubed;
-  } else if (val.elements["radioRoom"].value == "manually") {
-    totalVolume =
-      parseInt(manualVolume) + parseInt(floorVolume) + parseInt(ceilingVolume);
-    document.getElementById("totalVolume").innerHTML = totalVolume + cubed;
-  }
+  totalVolume = volumeRoom + floorVolume + ceilingVolume;
+  document.getElementById("totalVolume").innerHTML = totalVolume + cubed;
   console.log(`Total Volume ${totalVolume}`);
-  // document.getElementById("totalVolumeresults").value = totalVolume;
 }
 
 function equipmentSurface() {
