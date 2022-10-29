@@ -117,9 +117,6 @@
             <h3>Protected Area</h3>
           </div>
           <div class="cardbody">
-            <div class="card-text">
-              <p> Storage Type? </p>
-            </div>
             <form class="btn-group btn-group-toggle" data-toggle="buttons" id="radiowarehouse">
               <label class="btn btn-secondary">
                 <input onclick="displayWarehouse()" type="radio" name="radioWarehouse" id="warehouse" value="warehouse"
@@ -141,14 +138,16 @@
           </div>
           <div class="card-text" id="warehouse-temperature">
             <p> Select The Warehouse Temperature Type</p>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <form class="btn-group btn-group-toggle" data-toggle="buttons" id="tempType">
               <label class="btn btn-warning">
-                <input type="radio" name="options" id="option1" autocomplete="off"> Ambient
+                <input onclick="displayWarehouse()" type="radio" name="options" id="option1" autocomplete="off"
+                  value="ambient"> Ambient
               </label>
               <label class="btn btn-primary">
-                <input type="radio" name="options" id="option2" autocomplete="off"> Freeze
+                <input onclick="displayWarehouse()" type="radio" name="options" id="option2" autocomplete="off"
+                  value="freeze"> Freeze
               </label>
-            </div>
+            </form>
           </div>
           <br>
           <br>
@@ -159,15 +158,21 @@
                   <p>Temperature(°C)</p>
                 </td>
                 <td>
-                  <input class="form-control w-50" oninput="" type="number" id="temperature" class="input"
-                    placeholder="0" min="-60" oninput="validity.valid||(value='');" required autocomplete="off" />
+                  <input class="form-control w-50" type="number" id="temperature" class="input" placeholder="0"
+                    min="-60" max="40" oninput="validity.valid||(value='');" required autocomplete="off" />
                 </td>
+              </tr>
+            </table>
+          </div>
+          <div class="N50" id="N50">
+            <table class="table">
+              <tr>
                 <td>
                   <p>N-50 value</p>
                 </td>
                 <td>
-                  <input class="form-control w-50" oninput="" type="number" id="n50" class="input" placeholder="0"
-                    min="0" oninput="validity.valid||(value='');" required autocomplete="off" />
+                  <input class="form-control w-50" type="number" id="n50" class="input" placeholder="0" min="0" max="1"
+                    oninput="validity.valid||(value='');" required autocomplete="off" />
                 </td>
               </tr>
             </table>

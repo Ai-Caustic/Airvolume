@@ -44,9 +44,11 @@ body input {
   color: black;
 }
 input:valid {
-  color: green !important;
-  background-color: rgb(223, 219, 211) !important;
-  border: solid limegreen !important;
+  color: black !important;
+  background-color: #e8f0fe !important;
+  border: solid 1px limegreen !important;
+  font-family: "Signika", sans-serif;
+  font-weight: 400;
   border-radius: 5px;
   accent-color: black;
 }

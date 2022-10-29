@@ -47,20 +47,30 @@ function revert1() {
 
 function change2() {
   var val = document.getElementById("radiowarehouse");
+  var val2 = document.getElementById("tempType");
   temperature = document.getElementById("temperature").value;
   n50 = document.getElementById("n50").value;
 
   if (
+    val.elements["radioWarehouse"].value == "warehouse" ||
     val.elements["radioWarehouse"].value == "archive" ||
     val.elements["radioWarehouse"].value == "IT" ||
     val.elements["radioWarehouse"].value == "library"
   ) {
-    document.getElementById("section3").style.display = "block";
-    document.getElementById("section2").style.display = "none";
-  } else if (val.elements["radioWarehouse"].value == "warehouse") {
-    if (temperature !== "" && n50 !== "") {
-      document.getElementById("section3").style.display = "block";
-      document.getElementById("section2").style.display = "none";
+    if (val2.elements["options"].value == "ambient") {
+      if (n50.value !== "") {
+        document.getElementById("section2").style.display = "none";
+        document.getElementById("section3").style.display = "block";
+      } else {
+        window.alert("Please fill in the fields");
+      }
+    } else if (val2.elements["options"].value == "freeze") {
+      if (n50.value !== "" && temperature.value !== "") {
+        document.getElementById("section2").style.display = "none";
+        document.getElementById("section3").style.display = "block";
+      } else {
+        window.alert("Please fill in the fields");
+      }
     } else {
       window.alert("Please fill in the fields");
     }

@@ -13,6 +13,7 @@ function hidefield() {
   document.getElementById("warehouse-temperature").style.display = "none";
   document.getElementById("equipment-dimensions").style.display = "none";
   document.getElementById("temperatureWarehouse").style.display = "none";
+  document.getElementById("N50").style.display = "none";
   document.getElementById("manualroom").style.display = "none";
   document.getElementById("tableroom").style.display = "none";
   document.getElementById("storageType").style.display = "none";
@@ -144,15 +145,26 @@ function displayLayers() {
 
 function displayWarehouse() {
   var val = document.getElementById("radiowarehouse");
+  var val2 = document.getElementById("tempType");
 
-  console.log(val.elements["radioWarehouse"].value);
-
-  if (val.elements["radioWarehouse"].value == "warehouse") {
+  if (
+    val.elements["radioWarehouse"].value == "warehouse" ||
+    val.elements["radioWarehouse"].value == "archive" ||
+    val.elements["radioWarehouse"].value == "IT" ||
+    val.elements["radioWarehouse"].value == "library"
+  ) {
     document.getElementById("warehouse-temperature").style.display = "block";
-    document.getElementById("temperatureWarehouse").style.display = "block";
   } else {
     document.getElementById("warehouse-temperature").style.display = "none";
     document.getElementById("temperatureWarehouse").style.display = "none";
+  }
+
+  if (val2.elements["options"].value == "freeze") {
+    document.getElementById("temperatureWarehouse").style.display = "block";
+    document.getElementById("N50").style.display = "block";
+  } else if (val2.elements["options"].value == "ambient") {
+    document.getElementById("temperatureWarehouse").style.display = "none";
+    document.getElementById("N50").style.display = "block";
   }
 }
 
