@@ -13,6 +13,10 @@ function hidesections() {
   document.getElementById("section12").style.display = "none";
 }
 
+let errorMessage = () => {
+  window.alert("Make sure you have filled in all the fields.");
+};
+
 function change1() {
   owner = document.getElementById("projectOwner");
   client = document.getElementById("Client").value;
@@ -36,7 +40,7 @@ function change1() {
     document.getElementById("section1").style.display = "none";
     document.getElementById("section2").style.display = "block";
   } else {
-    window.alert("Please fill in the fields");
+    errorMessage();
   }
 }
 
@@ -57,25 +61,21 @@ function change2() {
     val.elements["radioWarehouse"].value == "IT" ||
     val.elements["radioWarehouse"].value == "library"
   ) {
-    if (val2.elements["options"].value == "ambient") {
-      if (n50.value !== "") {
+    if (val2.elements["options"].value == "freeze") {
+      if (temperature !== "" && n50 !== "") {
         document.getElementById("section2").style.display = "none";
         document.getElementById("section3").style.display = "block";
-      } else {
-        window.alert("Please fill in the fields");
       }
-    } else if (val2.elements["options"].value == "freeze") {
-      if (n50.value !== "" && temperature.value !== "") {
+    } else if (val2.elements["options"].value == "ambient") {
+      if (n50 !== "" && temperature == "") {
         document.getElementById("section2").style.display = "none";
         document.getElementById("section3").style.display = "block";
-      } else {
-        window.alert("Please fill in the fields");
       }
     } else {
-      window.alert("Please fill in the fields");
+      errorMessage();
     }
   } else {
-    window.alert("Please fill in the fields");
+    errorMessage();
   }
 }
 
@@ -93,7 +93,7 @@ function change3() {
     document.getElementById("section4").style.display = "block";
     document.getElementById("section3").style.display = "none";
   } else {
-    window.alert("Please fill in the fields");
+    errorMessage();
   }
 
   volumeTotal();
@@ -116,7 +116,7 @@ function change4() {
       document.getElementById("section5").style.display = "block";
       document.getElementById("section4").style.display = "none";
     } else {
-      window.alert("Please fill in the fields");
+      errorMessage();
     }
   }
   volumeTotal();
@@ -139,7 +139,7 @@ function change5() {
       document.getElementById("section6").style.display = "block";
       document.getElementById("section5").style.display = "none";
     } else {
-      window.alert("Please fill in the fields");
+      errorMessage();
     }
   }
   volumeTotal();
@@ -177,7 +177,7 @@ function change7() {
         document.getElementById("section7").style.display = "none";
         document.getElementById("section8").style.display = "block";
       } else {
-        window.alert("Please fill in the fields");
+        errorMessage();
       }
     }
   }
@@ -206,7 +206,7 @@ function change8() {
       document.getElementById("section8").style.display = "none";
     }
   } else {
-    window.alert("Please fill in the fields");
+    errorMessage();
   }
 }
 
@@ -217,36 +217,17 @@ function revert8() {
 
 function change9() {
   var val = document.getElementById("radioopenings");
-  var val1 = document.getElementById("sluicevolume");
   openings = document.getElementById("wall-layers").value;
-  manuaVolume = document.getElementById("volumeSluice1").value;
-  surfaceSluice = document.getElementById("surfaceSluice").value;
-  heightSluice = document.getElementById("heightSluice").value;
+  manualVolume = document.getElementById("volumeSluice1").value;
   widthOpening = document.getElementById("widthOpening").value;
   heightOpening = document.getElementById("heightOpening").value;
 
-  //The most complex Conditional statements I've ever written in my life
-
   if (val.elements["radioOpenings"].value == "sluice") {
-    if (val1.elements["sluiceVolume"].value == "no") {
-      if (surfaceSluice !== "" && heightSluice !== "" && openings !== "") {
-        document.getElementById("section9").style.display = "none";
-        document.getElementById("section10").style.display = "block";
-      } else if (val1.elements["sluiceVolume"].value == "yes") {
-        if (manualVolume !== "" && openings !== "") {
-          document.getElementById("section9").style.display = "none";
-          document.getElementById("section10").style.display = "block";
-        }
-      } else {
-        window.alert("Please fill in the fields");
-      }
-    } else if (val1.elements["sluiceVolume"].value == "yes") {
-      if (manualVolume !== "" && openings !== "") {
-        document.getElementById("section9").style.display = "none";
-        document.getElementById("section10").style.display = "block";
-      }
+    if (manualVolume !== "" && openings !== "") {
+      document.getElementById("section9").style.display = "none";
+      document.getElementById("section10").style.display = "block";
     } else {
-      window.alert("Please fill in the fields");
+      errorMessage();
     }
   } else if (
     val.elements["radioOpenings"].value == "door" ||
@@ -256,10 +237,10 @@ function change9() {
       document.getElementById("section9").style.display = "none";
       document.getElementById("section10").style.display = "block";
     } else {
-      window.alert("Please fill in the fields");
+      errorMessage();
     }
   } else {
-    window.alert("Please fill in the fields");
+    errorMessage();
   }
 }
 
@@ -269,24 +250,29 @@ function revert9() {
 }
 
 function change10() {
-  var val = document.getElementById("radioequipment");
+  val = document.getElementById("radiowarehouse");
   length = document.getElementById("length-equipment").value;
   width = document.getElementById("width-equipment").value;
   height = document.getElementById("height-equipment").value;
   temp = document.getElementById("temp-equipment").value;
 
-  if (val.elements["radioEquipment"].value == "no") {
-    document.getElementById("section10").style.display = "none";
-    document.getElementById("section11").style.display = "block";
-  } else if (val.elements["radioEquipment"].value == "yes") {
-    if (length !== "" && width !== "" && height !== "" && temp !== "") {
+  let protectedMaterial = () => {
+    if (
+      val.elements["radioWarehouse"].value == "warehouse" ||
+      val.elements["radioWarehouse"].value == "archive"
+    ) {
       document.getElementById("section10").style.display = "none";
       document.getElementById("section11").style.display = "block";
     } else {
-      window.alert("Please fill in the fields");
+      document.getElementById("section10").style.display = "none";
+      document.getElementById("section12").style.display = "block";
     }
+  };
+
+  if (length !== "" && width !== "" && height !== "" && temp !== "") {
+    protectedMaterial();
   } else {
-    window.alert("Please fill in the fields");
+    errorMessage();
   }
 }
 
@@ -305,17 +291,17 @@ function change11() {
       document.getElementById("section11").style.display = "none";
       document.getElementById("section12").style.display = "block";
     } else {
-      window.alert("Please fill in the fields");
+      errorMessage();
     }
   } else if (val.elements["radioStorage"].value == "yes") {
     if (volume !== "" && oxyContent !== "") {
       document.getElementById("section11").style.display = "none";
       document.getElementById("section12").style.display = "block";
     } else {
-      window.alert("Please fill in the fields");
+      errorMessage();
     }
   } else {
-    window.alert("Please fill in the fields");
+    errorMessage();
   }
 }
 

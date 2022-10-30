@@ -11,17 +11,25 @@ function hidefield() {
   document.getElementById("wallData5").style.display = "none";
   document.getElementById("wallData6").style.display = "none";
   document.getElementById("warehouse-temperature").style.display = "none";
-  document.getElementById("equipment-dimensions").style.display = "none";
   document.getElementById("temperatureWarehouse").style.display = "none";
   document.getElementById("N50").style.display = "none";
   document.getElementById("storageType").style.display = "none";
   document.getElementById("tableOpenings").style.display = "none";
-  document.getElementById("tableSluice").style.display = "none";
   document.getElementById("manualSluice").style.display = "none";
-  document.getElementById("sluicevolume").style.display = "none";
-  document.getElementById("tableSluice").style.display = "none";
   hidesections();
 }
+
+let tempType = () => {
+  var val2 = document.getElementById("tempType");
+
+  if (val2.elements["options"].value == "freeze") {
+    document.getElementById("temperatureWarehouse").style.display = "block";
+    document.getElementById("N50").style.display = "block";
+  } else {
+    document.getElementById("temperatureWarehouse").style.display = "none";
+    document.getElementById("N50").style.display = "block";
+  }
+};
 
 function displayFloor() {
   var val = document.getElementById("radiofloor");
@@ -143,7 +151,6 @@ function displayLayers() {
 
 function displayWarehouse() {
   var val = document.getElementById("radiowarehouse");
-  var val2 = document.getElementById("tempType");
 
   if (
     val.elements["radioWarehouse"].value == "warehouse" ||
@@ -155,26 +162,6 @@ function displayWarehouse() {
   } else {
     document.getElementById("warehouse-temperature").style.display = "none";
     document.getElementById("temperatureWarehouse").style.display = "none";
-  }
-
-  if (val2.elements["options"].value == "freeze") {
-    document.getElementById("temperatureWarehouse").style.display = "block";
-    document.getElementById("N50").style.display = "block";
-  } else if (val2.elements["options"].value == "ambient") {
-    document.getElementById("temperatureWarehouse").style.display = "none";
-    document.getElementById("N50").style.display = "block";
-  }
-}
-
-function displayEquipment() {
-  var val = document.getElementById("radioequipment");
-
-  console.log(val.elements["radioEquipment"].value);
-
-  if (val.elements["radioEquipment"].value == "yes") {
-    document.getElementById("equipment-dimensions").style.display = "block";
-  } else {
-    document.getElementById("equipment-dimensions").style.display = "none";
   }
 }
 
@@ -190,49 +177,17 @@ function displayStorage() {
   }
 }
 
-// function displayRoom() {
-//   var val = document.getElementById("radioroom");
-
-//   console.log(val.elements["radioRoom"].value);
-
-//   if (val.elements["radioRoom"].value == "manually") {
-//     document.getElementById("manualroom").style.display = "block";
-//     document.getElementById("tableroom").style.display = "none";
-//   } else {
-//     document.getElementById("manualroom").style.display = "none";
-//     document.getElementById("tableroom").style.display = "block";
-//   }
-// }
-
 function displayOpenings() {
   var val = document.getElementById("radioopenings");
-
-  console.log(val.elements["radioOpenings"].value);
 
   if (
     val.elements["radioOpenings"].value == "door" ||
     val.elements["radioOpenings"].value == "doorFast"
   ) {
     document.getElementById("tableOpenings").style.display = "block";
-    document.getElementById("tableSluice").style.display = "none";
-    document.getElementById("sluicevolume").style.display = "none";
     document.getElementById("manualSluice").style.display = "none";
   } else if (val.elements["radioOpenings"].value == "sluice") {
     document.getElementById("tableOpenings").style.display = "none";
-    document.getElementById("sluicevolume").style.display = "block";
-  }
-}
-
-function manualSluice() {
-  var val = document.getElementById("sluicevolume");
-
-  console.log(val.elements["sluiceVolume"].value);
-
-  if (val.elements["sluiceVolume"].value == "yes") {
     document.getElementById("manualSluice").style.display = "block";
-    document.getElementById("tableSluice").style.display = "none";
-  } else {
-    document.getElementById("tableSluice").style.display = "block";
-    document.getElementById("manualSluice").style.display = "none";
   }
 }

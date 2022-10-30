@@ -63,15 +63,6 @@ function equipmentVolume() {
 
   document.getElementById("volumeEquipment").innerHTML = volume + cubed;
 }
-function sluiceVolume() {
-  surfaceSluice = document.getElementById("surfaceSluice").value;
-  heightSluice = document.getElementById("heightSluice").value;
-
-  volume = surfaceSluice * heightSluice;
-
-  document.getElementById("volumeSluice").innerHTML = volume + cubed;
-}
-
 function avgOpenings() {
   var monday = document.getElementById("monday").value;
   var tuesday = document.getElementById("tuesday").value;

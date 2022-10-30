@@ -66,8 +66,6 @@ document.getElementById("demo").onclick = () => {
 
   var radioOpenings = document.getElementById("radioopenings");
   var radioOpeningsValue = radioOpenings.elements["radioOpenings"].value;
-  var sluiceVolume = document.getElementById("sluicevolume");
-  var sluiceVolumeValue = sluiceVolume.elements["sluiceVolume"].value;
   var openings = document.getElementById("wall-layers").value;
   var manuaVolumeSluice = document.getElementById("volumeSluice1").value;
   var surfaceSluice = document.getElementById("surfaceSluice").value;
@@ -147,7 +145,6 @@ document.getElementById("demo").onclick = () => {
     [],
     ["Opening", radioOpeningsValue],
     [],
-    ["Manually?", sluiceVolumeValue],
     ["Openings present", openings],
     ["Manual Sluice Volume", manuaVolumeSluice],
     ["Surface Area", surfaceSluice],
