@@ -109,19 +109,12 @@ function revert3() {
 }
 
 function change4() {
-  var val = document.getElementById("radiofloor");
   height = document.getElementById("heightFloor").value;
-
-  if (val.elements["radioFloor"].value == "no") {
+  if (height !== "") {
     document.getElementById("section5").style.display = "block";
     document.getElementById("section4").style.display = "none";
-  } else if (val.elements["radioFloor"].value == "yes") {
-    if (height !== "") {
-      document.getElementById("section5").style.display = "block";
-      document.getElementById("section4").style.display = "none";
-    } else {
-      errorMessage();
-    }
+  } else {
+    errorMessage();
   }
   volumeTotal();
 }
@@ -132,19 +125,13 @@ function revert4() {
 }
 
 function change5() {
-  var val = document.getElementById("radioCeiling");
   height = document.getElementById("heightCeiling").value;
 
-  if (val.elements["radioCeiling"].value == "no") {
+  if (height !== "") {
     document.getElementById("section6").style.display = "block";
     document.getElementById("section5").style.display = "none";
-  } else if (val.elements["radioCeiling"].value == "yes") {
-    if (height !== "") {
-      document.getElementById("section6").style.display = "block";
-      document.getElementById("section5").style.display = "none";
-    } else {
-      errorMessage();
-    }
+  } else {
+    errorMessage();
   }
   volumeTotal();
 }

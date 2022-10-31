@@ -1,6 +1,4 @@
 function hidefield() {
-  document.getElementById("falsefloor").style.display = "none";
-  document.getElementById("falseceiling").style.display = "none";
   document.getElementById("volumeAir").style.display = "none";
   document.getElementById("radiocirculation").style.display = "none";
   document.getElementById("insulation").style.display = "none";
