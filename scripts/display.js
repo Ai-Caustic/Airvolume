@@ -13,7 +13,6 @@ function hidefield() {
   document.getElementById("warehouse-temperature").style.display = "none";
   document.getElementById("temperatureWarehouse").style.display = "none";
   document.getElementById("N50").style.display = "none";
-  document.getElementById("storageType").style.display = "none";
   document.getElementById("tableOpenings").style.display = "none";
   document.getElementById("manualSluice").style.display = "none";
   hidesections();
@@ -30,38 +29,20 @@ let tempType = () => {
     document.getElementById("N50").style.display = "block";
   }
 };
+let selectTemp = () => {
+  var val = document.getElementById("radiowarehouse");
+  var radioText = document.getElementById("selectTemp");
 
-function displayFloor() {
-  var val = document.getElementById("radiofloor");
-
-  console.log(val.elements["radioFloor"].value);
-
-  if (val.elements["radioFloor"].value == "yes") {
-    document.getElementById("falsefloor").style.display = "block";
-    document.getElementById("volumeFloor").innerHTML = "";
-  } else {
-    document.getElementById("falsefloor").style.display = "none";
-    document.getElementById("heightFloor").value = "";
-    floorVolume = 0;
-    document.getElementById("volumeFloor").innerHTML = 0;
+  if (val.elements["radioWarehouse"].value == "warehouse") {
+    radioText.innerHTML = "Select the warehouse temperature type";
+  } else if (val.elements["radioWarehouse"].value == "IT") {
+    radioText.innerHTML = "Select the IT-Center temperature type";
+  } else if (val.elements["radioWarehouse"].value == "archive") {
+    radioText.innerHTML = "Select the archive temperature type";
+  } else if (val.elements["radioWarehouse"].value == "library") {
+    radioText.innerHTML = "Select the library temperature type";
   }
-}
-
-function displayCeiling() {
-  var val = document.getElementById("radioCeiling");
-
-  console.log(val.elements["radioCeiling"].value);
-
-  if (val.elements["radioCeiling"].value == "yes") {
-    document.getElementById("falseceiling").style.display = "block";
-  } else {
-    document.getElementById("falseceiling").style.display = "none";
-    document.getElementById("heightCeiling").value = "";
-    ceilingVolume = 0;
-    document.getElementById("volumeCeiling").innerHTML = 0;
-  }
-}
-
+};
 function displayCirculation() {
   var val = document.getElementById("radioventilation");
 
@@ -151,6 +132,7 @@ function displayLayers() {
 
 function displayWarehouse() {
   var val = document.getElementById("radiowarehouse");
+  selectTemp();
 
   if (
     val.elements["radioWarehouse"].value == "warehouse" ||

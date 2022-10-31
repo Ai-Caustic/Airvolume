@@ -58,11 +58,11 @@
               </tr>
               <tr>
                 <td>
-                  <p>Date / Time </p>
+                  <p>Date</p>
                 </td>
                 <td>
-                  <input class="form-control w-50" type="datetime-local" id="projectDate" class="input"
-                    placeholder="Date" required maxlength="40" autocomplete="off" />
+                  <input class="form-control w-50" type="date" id="projectDate" class="input" placeholder="Date"
+                    required maxlength="40" autocomplete="off" />
                 </td>
               </tr>
               <tr>
@@ -137,7 +137,7 @@
             </form>
           </div>
           <div class="card-text" id="warehouse-temperature">
-            <p> Select The Warehouse Temperature Type</p>
+            <p id="selectTemp"></p>
             <form class="btn-group btn-group-toggle" data-toggle="buttons" id="tempType">
               <label class="btn btn-warning">
                 <input onclick="tempType()" type="radio" name="options" id="option1" autocomplete="off" value="ambient">
@@ -168,11 +168,11 @@
             <table class="table">
               <tr>
                 <td>
-                  <p>N-50 value</p>
+                  <p>Tightness of protected area</p>
                 </td>
                 <td>
                   <input class="form-control w-50" type="number" id="n50" class="input" placeholder="0" min="0" max="1"
-                    oninput="validity.valid||(value='');" required autocomplete="off" />
+                    step="0.01" oninput="validity.valid||(value='');" required autocomplete="off" />
                 </td>
               </tr>
             </table>
@@ -240,6 +240,14 @@
                     <span class="output" id="volumeRoom" onchange="volumeTotal1()" /></span>
                   </td>
                 </tr>
+                <td>
+                  <p>Volume(manual)</p>
+                </td>
+                <td>
+                  <input class="form-control w-50" oninput="" onchange="" type="number" id="manualRoomVolume"
+                    class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required
+                    autocomplete="off" />
+                </td>
               </table>
             </div>
           </div>
@@ -257,13 +265,6 @@
           <div class="card-header">
             <h3>False floor (additional)</h3>
           </div>
-          <form class="checkbox" id="radiofloor">
-            <label class="btn btn-secondary"><input onclick="displayFloor()" type="radio" name="radioFloor" id="yes"
-                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label class="btn btn-secondary"><input onclick=" displayFloor()" type="radio" name="radioFloor" id="no"
-                value="no" />No</label>
-          </form>
-
         </div>
       </div>
       <div class="Falsefloor" id="falsefloor">
@@ -311,14 +312,7 @@
           <div class="card-header">
             <h3>Suspended Ceiling (additional)</h3>
           </div>
-          <form class="checkbox" id="radioCeiling">
-            <label class="btn btn-secondary"><input onclick="displayCeiling()" type="radio" name="radioCeiling" id="yes"
-                value="yes" />Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <label class="btn btn-secondary"><input onclick="displayCeiling()" type="radio" name="radioCeiling" id="no"
-                value="no" />No</label>
-          </form>
         </div>
-
       </div>
       <div class="suspendedCeiling" id="falseceiling">
         <div class="card text-center">
@@ -419,11 +413,11 @@
               <table class="table">
                 <tr>
                   <td>
-                    <p>Volume of Fresh Air(metres per hour)</p>
+                    <p>Volume of Fresh Air(m³/h)</p>
                   </td>
                   <td>
                     <input class="form-control w-50" type="number" id="volAir" class="input" placeholder="0.00" min="0"
-                      oninput="validity.valid||(value='');" required autocomplete="off" />
+                      oninput="validity.valid||(value='');" required autocomplete="off" step="0.1" />
                   </td>
                 </tr>
               </table>
@@ -446,7 +440,7 @@
             <h3>Outside Walls</h3>
           </div>
           <div class="card-text">
-            <p>How many outside walls are present? </p>
+            <p>Shielding of building</p>
           </div>
 
           <div class="checkbox">
@@ -515,7 +509,7 @@
               <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
                   id="door" value="door" />Door</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
-                  id="doorFast" value="doorFast" />Door Fast Opening</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  id="doorFast" value="doorFast" />Fast door opening</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </form>
             <div class="" id="manualSluice">
               <table class="table">
@@ -1152,20 +1146,6 @@
               <label class="btn btn-secondary"><input onclick="displayStorage()" type="radio" name="radioStorage"" id="
                   no" value="no" />No</label>
             </form>
-            <br><br>
-            <div class="storageType" id="storageType">
-              <table class="table">
-                <tr>
-                  <td>
-                    <p>Volume percentage in stock(m3)</p>
-                  </td>
-                  <td>
-                    <input class="form-control w-50" type="number" id="stockpercentage" class="input" min="1" required
-                      oninput="validity.valid||(value='');" placeholder="0" required />
-                  </td>
-                </tr>
-              </table>
-            </div>
             <br>
             <div class="oxygenContent" id="oxygenContent">
               <table class="table">

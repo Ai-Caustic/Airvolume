@@ -65,11 +65,15 @@ function change2() {
       if (temperature !== "" && n50 !== "") {
         document.getElementById("section2").style.display = "none";
         document.getElementById("section3").style.display = "block";
+      } else {
+        errorMessage();
       }
     } else if (val2.elements["options"].value == "ambient") {
       if (n50 !== "" && temperature == "") {
         document.getElementById("section2").style.display = "none";
         document.getElementById("section3").style.display = "block";
+      } else {
+        errorMessage();
       }
     } else {
       errorMessage();
@@ -283,7 +287,6 @@ function revert10() {
 
 function change11() {
   var val = document.getElementById("radiostorage");
-  volume = document.getElementById("stockpercentage").value;
   oxyContent = document.getElementById("oxygenContent").value;
 
   if (val.elements["radioStorage"].value == "no") {
@@ -294,7 +297,7 @@ function change11() {
       errorMessage();
     }
   } else if (val.elements["radioStorage"].value == "yes") {
-    if (volume !== "" && oxyContent !== "") {
+    if (oxyContent !== "") {
       document.getElementById("section11").style.display = "none";
       document.getElementById("section12").style.display = "block";
     } else {
