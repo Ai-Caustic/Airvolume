@@ -16,11 +16,31 @@ function roomSurface() {
 }
 
 function roomVolume() {
-  heightRoom = document.getElementById("heightRoom").value;
+  manualRoomVolume = document.getElementById("manualRoomVolume");
+  heightRoom = document.getElementById("heightRoom");
   lengthRoom = document.getElementById("lengthRoom").value;
   widthRoom = document.getElementById("widthRoom").value;
-  volumeRoom = surfaceArea * heightRoom;
-  document.getElementById("volumeRoom").innerHTML = volumeRoom + cubed;
+
+  if (heightRoom.value !== "") {
+    manualRoomVolume.disabled = true;
+    volumeRoom = surfaceArea * heightRoom.value;
+    document.getElementById("volumeRoom").innerHTML = volumeRoom + cubed;
+  } else {
+    manualRoomVolume.disabled = false;
+  }
+}
+
+function manualVolumeRoom() {
+  var roomHeight = document.getElementById("heightRoom");
+  manualRoomVolume = document.getElementById("manualRoomVolume");
+
+  if (manualRoomVolume.value !== "") {
+    heightRoom.disabled = true;
+    volumeRoom = surfaceArea * manualRoomVolume.value;
+    document.getElementById("volumeRoom").innerHTML = volumeRoom + cubed;
+  } else {
+    heightRoom.disabled = false;
+  }
 }
 
 //False Floor (additional)

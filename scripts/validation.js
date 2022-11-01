@@ -92,8 +92,18 @@ function change3() {
   length = document.getElementById("lengthRoom").value;
   width = document.getElementById("widthRoom").value;
   height = document.getElementById("heightRoom").value;
+  let manualRoomVolume = document.getElementById("manualRoomVolume").value;
 
-  if (length !== "" && width !== "" && height !== "") {
+  if (length !== "" && width !== "") {
+    document.getElementById("section4").style.display = "block";
+    document.getElementById("section3").style.display = "none";
+  } else {
+    errorMessage();
+  }
+  if (manualRoomVolume == "" && height !== "") {
+    document.getElementById("section4").style.display = "block";
+    document.getElementById("section3").style.display = "none";
+  } else if (manualRoomVolume !== "" && height == "") {
     document.getElementById("section4").style.display = "block";
     document.getElementById("section3").style.display = "none";
   } else {

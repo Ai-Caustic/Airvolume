@@ -216,6 +216,24 @@
                 </tr>
                 <tr>
                   <td>
+                    <p>Surface Area (room) </p>
+                  </td>
+                  <td>
+                    <span class="output" id="areaRoom"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Volume(manual)</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" oninput="" onchange="manualVolumeRoom()" type="number"
+                      id="manualRoomVolume" class="input" placeholder="0.00" min="0"
+                      oninput="validity.valid||(value='');" required autocomplete="off" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     <p>Height(m):</p>
                   </td>
                   <td>
@@ -226,28 +244,12 @@
                 </tr>
                 <tr>
                   <td>
-                    <p>Surface Area (room) </p>
-                  </td>
-                  <td>
-                    <span class="output" id="areaRoom"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     <p>Volume (room) </p>
                   </td>
                   <td>
                     <span class="output" id="volumeRoom" onchange="volumeTotal1()" /></span>
                   </td>
                 </tr>
-                <td>
-                  <p>Volume(manual)</p>
-                </td>
-                <td>
-                  <input class="form-control w-50" oninput="" onchange="" type="number" id="manualRoomVolume"
-                    class="input" placeholder="0.00" min="0" oninput="validity.valid||(value='');" required
-                    autocomplete="off" />
-                </td>
               </table>
             </div>
           </div>
