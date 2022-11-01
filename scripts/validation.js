@@ -210,8 +210,8 @@ function change9() {
   var val = document.getElementById("radioopenings");
   openings = document.getElementById("wall-layers").value;
   manualVolume = document.getElementById("volumeSluice1").value;
-  widthOpening = document.getElementById("widthOpening").value;
-  heightOpening = document.getElementById("heightOpening").value;
+  volumeFastDoor = document.getElementById("volumeDoorFast").value;
+  volumeDoor = document.getElementById("volumeDoor").value;
 
   if (val.elements["radioOpenings"].value == "sluice") {
     if (manualVolume !== "" && openings !== "") {
@@ -220,11 +220,15 @@ function change9() {
     } else {
       errorMessage();
     }
-  } else if (
-    val.elements["radioOpenings"].value == "door" ||
-    val.elements["radioOpenings"].value == "doorFast"
-  ) {
-    if (widthOpening !== "" && heightOpening !== "" && openings !== "") {
+  } else if (val.elements["radioOpenings"].value == "door") {
+    if (volumeDoor !== "" && openings !== "") {
+      document.getElementById("section9").style.display = "none";
+      document.getElementById("section10").style.display = "block";
+    } else {
+      errorMessage();
+    }
+  } else if (val.elements["radioOpenings"].value == "doorFast") {
+    if (volumeFastDoor !== "" && openings !== "") {
       document.getElementById("section9").style.display = "none";
       document.getElementById("section10").style.display = "block";
     } else {

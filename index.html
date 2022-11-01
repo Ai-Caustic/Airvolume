@@ -497,71 +497,23 @@
     </div>
 
     <div class="section" id="section9">
-      <div class="wallLayers">
-        <div class="card text-center">
+
+      <div class="wallData">
+        <div class="card">
           <div class="card-header">
             <h3>Openings (Sluice / Door / Door Fast Opening)</h3>
           </div>
-          <div class="card-body">
-            <form class="checkbox" id="radioopenings">
-              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
-                  id="sluice" value="sluice" />Sluice</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
-                  id="door" value="door" />Door</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
-                  id="doorFast" value="doorFast" />Fast door opening</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </form>
-            <div class="" id="manualSluice">
-              <table class="table">
-                <tr>
-                  <td>
-                    <p>Volume(Sluice):</p>
-                  </td>
-                  <td>
-                    <input class="form-control w-50" onchange="" type="number" id="volumeSluice1" class="input"
-                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="" id="tableOpenings">
-              <table class="table">
-                <tr>
-                  <td>
-                    <p>Width(m):</p>
-                  </td>
-                  <td>
-                    <input class="form-control w-50" onchange="" type="number" id="widthOpening" class="input"
-                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <p>Height(m):</p>
-                  </td>
-                  <td>
-                    <input class="form-control w-50" onchange="" type="number" id="heightOpening" class="input"
-                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <table class="table">
-              <tr>
-                <td>
-                  <p>Openings (1 - 20)</p>
-                </td>
-                <td>
-                  <input onchange="displayLayers()" class="form-control w-50" class="input" type="number"
-                    id="wall-layers" min="1" max="20" oninput="validity.valid||(value='');" placeholder="0" required />
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="wallData">
-        <div class="card">
+          <table class="table">
+            <tr>
+              <td>
+                <p>Openings (1 - 20)</p>
+              </td>
+              <td>
+                <input onchange="displayLayers()" class="form-control w-50" class="input" type="number" id="wall-layers"
+                  min="0" max="20" oninput="validity.valid||(value='');" placeholder="0" required />
+              </td>
+            </tr>
+          </table>
           <div class="card text-center" id="wallData1">
             <div class="card-body">
               <div class="card-heading">
@@ -1195,6 +1147,59 @@
                   <td>
                     <input type="number" class="form-control w-50" class="input" placeholder="0" min="0"
                       oninput="validity.valid||(value='');" required>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wallLayers">
+        <div class="card text-center">
+          <div class="card-body">
+            <form class="checkbox" id="radioopenings">
+              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
+                  id="sluice" value="sluice" />Sluice</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
+                  id="door" value="door" />Door</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label class="btn btn-secondary"><input onclick="displayOpenings()" type="radio" name="radioOpenings"
+                  id="doorFast" value="doorFast" />Fast door opening</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </form>
+            <div class="" id="manualSluice">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Volume(Sluice):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" onchange="" type="number" id="volumeSluice1" class="input"
+                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="doorOpeningVolume">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Volume(Door):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" onchange="" type="number" id="volumeDoor" class="input"
+                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="doorFastVolume">
+              <table class="table">
+                <tr>
+                  <td>
+                    <p>Volume(Fast door opening):</p>
+                  </td>
+                  <td>
+                    <input class="form-control w-50" onchange="" type="number" id="volumeDoorFast" class="input"
+                      placeholder="0.00" min="0" oninput="validity.valid||(value='');" required />
                   </td>
                 </tr>
               </table>

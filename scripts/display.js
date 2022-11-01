@@ -11,8 +11,9 @@ function hidefield() {
   document.getElementById("warehouse-temperature").style.display = "none";
   document.getElementById("temperatureWarehouse").style.display = "none";
   document.getElementById("N50").style.display = "none";
-  document.getElementById("tableOpenings").style.display = "none";
   document.getElementById("manualSluice").style.display = "none";
+  document.getElementById("doorFastVolume").style.display = "none";
+  document.getElementById("doorOpeningVolume").style.display = "none";
   hidesections();
 }
 
@@ -82,6 +83,15 @@ function displayLayers() {
   var val = parseInt(document.getElementById("wall-layers").value);
 
   console.log(val);
+
+  if (val == 0) {
+    document.getElementById("wallData1").style.display = "none";
+    document.getElementById("wallData2").style.display = "none";
+    document.getElementById("wallData3").style.display = "none";
+    document.getElementById("wallData4").style.display = "none";
+    document.getElementById("wallData5").style.display = "none";
+    document.getElementById("wallData6").style.display = "none";
+  }
 
   if (val == 1) {
     document.getElementById("wallData1").style.display = "block";
@@ -159,15 +169,20 @@ function displayStorage() {
 
 function displayOpenings() {
   var val = document.getElementById("radioopenings");
+  var doorFastVolume = document.getElementById("doorFastVolume");
+  var doorVolume = document.getElementById("doorOpeningVolume");
 
-  if (
-    val.elements["radioOpenings"].value == "door" ||
-    val.elements["radioOpenings"].value == "doorFast"
-  ) {
-    document.getElementById("tableOpenings").style.display = "block";
+  if (val.elements["radioOpenings"].value == "door") {
+    doorVolume.style.display = "block";
+    doorFastVolume.style.display = "none";
     document.getElementById("manualSluice").style.display = "none";
   } else if (val.elements["radioOpenings"].value == "sluice") {
-    document.getElementById("tableOpenings").style.display = "none";
     document.getElementById("manualSluice").style.display = "block";
+    doorVolume.style.display = "none";
+    doorFastVolume.style.display = "none";
+  } else if (val.elements["radioOpenings"].value == "doorFast") {
+    doorFastVolume.style.display = "block";
+    document.getElementById("manualSluice").style.display = "none";
+    doorVolume.style.display = "none";
   }
 }
