@@ -31,7 +31,7 @@ function roomVolume() {
 }
 
 function manualVolumeRoom() {
-  var roomHeight = document.getElementById("heightRoom");
+  var heightRoom = document.getElementById("heightRoom");
   manualRoomVolume = document.getElementById("manualRoomVolume");
 
   if (manualRoomVolume.value !== "") {

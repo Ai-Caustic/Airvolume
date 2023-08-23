@@ -1,21 +1,21 @@
-function hidefield() {
-  document.getElementById("volumeAir").style.display = "none";
-  document.getElementById("radiocirculation").style.display = "none";
-  document.getElementById("insulation").style.display = "none";
-  document.getElementById("wallData1").style.display = "none";
-  document.getElementById("wallData2").style.display = "none";
-  document.getElementById("wallData3").style.display = "none";
-  document.getElementById("wallData4").style.display = "none";
-  document.getElementById("wallData5").style.display = "none";
-  document.getElementById("wallData6").style.display = "none";
-  document.getElementById("warehouse-temperature").style.display = "none";
-  document.getElementById("temperatureWarehouse").style.display = "none";
-  document.getElementById("N50").style.display = "none";
-  document.getElementById("manualSluice").style.display = "none";
-  document.getElementById("doorFastVolume").style.display = "none";
-  document.getElementById("doorOpeningVolume").style.display = "none";
-  hidesections();
-}
+// function hidefield() {
+//   document.getElementById("volumeAir").style.display = "none";
+//   document.getElementById("radiocirculation").style.display = "none";
+//   document.getElementById("insulation").style.display = "none";
+//   document.getElementById("wallData1").style.display = "none";
+//   document.getElementById("wallData2").style.display = "none";
+//   document.getElementById("wallData3").style.display = "none";
+//   document.getElementById("wallData4").style.display = "none";
+//   document.getElementById("wallData5").style.display = "none";
+//   document.getElementById("wallData6").style.display = "none";
+//   document.getElementById("warehouse-temperature").style.display = "none";
+//   document.getElementById("temperatureWarehouse").style.display = "none";
+//   document.getElementById("N50").style.display = "none";
+//   document.getElementById("manualSluice").style.display = "none";
+//   document.getElementById("doorFastVolume").style.display = "none";
+//   document.getElementById("doorOpeningVolume").style.display = "none";
+//   hidesections();
+// }
 
 let tempType = () => {
   var val2 = document.getElementById("tempType");

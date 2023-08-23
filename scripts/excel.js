@@ -20,26 +20,20 @@ document.getElementById("demo").onclick = () => {
 
   //Room
 
-  var radioRoom = document.getElementById("radioroom");
-  var radioRoomValue = radioRoom.elements["radioRoom"].value;
-  var manualSurfaceRoom = document.getElementById("areaRoom1").value;
-  var manualVolumeRoom = document.getElementById("volumeRoom1").value;
+  var manualVolumeRoom = document.getElementById("manualRoomVolume").value;
   var lengthRoom = document.getElementById("lengthRoom").value;
   var widthRoom = document.getElementById("widthRoom").value;
   var heightRoom = document.getElementById("heightRoom").value;
+  var surfaceRoom = document.getElementById("areaRoom").value;
   var roomvolume = document.getElementById("volumeRoom").value;
 
   //False Floor
 
-  var radioFloor = document.getElementById("radiofloor");
-  var radioFloorValue = radioFloor.elements["radioFloor"].value;
   var heightFalseFloor = document.getElementById("heightFloor").value;
   var floorVolume = document.getElementById("volumeFloor").value;
 
   //False Ceiling
 
-  var radioCeiling = document.getElementById("radioCeiling");
-  var radioCeilingValue = radioCeiling.elements["radioCeiling"].value;
   var heightFalseCeiling = document.getElementById("heightCeiling").value;
   var ceilingVolume = document.getElementById("volumeCeiling").value;
 
@@ -68,25 +62,8 @@ document.getElementById("demo").onclick = () => {
   var radioOpeningsValue = radioOpenings.elements["radioOpenings"].value;
   var openings = document.getElementById("wall-layers").value;
   var manuaVolumeSluice = document.getElementById("volumeSluice1").value;
-  var surfaceSluice = document.getElementById("surfaceSluice").value;
-  var heightSluice = document.getElementById("heightSluice").value;
-  var widthOpening = document.getElementById("widthOpening").value;
-  var heightOpening = document.getElementById("heightOpening").value;
-
-  //Equipment Room
-
-  var radioEquipment = document.getElementById("radioequipment");
-  var radioEquipmentValue = radioEquipment.elements["radioEquipment"].value;
-  var lengthEquipment = document.getElementById("length-equipment").value;
-  var widthEquipment = document.getElementById("width-equipment").value;
-  var heightEquipment = document.getElementById("height-equipment").value;
-  var tempEquipment = document.getElementById("temp-equipment").value;
-
-  //Storage Room
-
   var radioStorage = document.getElementById("radiostorage");
   var radioStorageValue = radioStorage.elements["radioStorage"].value;
-  var volumeStorage = document.getElementById("stockpercentage").value;
   var oxyContentStorage = document.getElementById("oxygenContent").value;
 
   //GENERATE EXCEL FILE
@@ -109,23 +86,18 @@ document.getElementById("demo").onclick = () => {
     [],
     ["ROOM"],
     [],
-    ["Manually/Computed?", radioRoomValue],
-    ["Manual Surface Area", manualSurfaceRoom],
-    ["Manual Volume", manualVolumeRoom],
     ["Length", lengthRoom],
     ["Width", widthRoom],
     ["Height", heightRoom],
+    ["Surface Area", surfaceRoom],
+    ["Manual Volume", manualVolumeRoom],
     ["Volume Room", roomvolume],
     [],
     ["FALSE FLOOR"],
-    ["False floor present?", radioFloorValue],
-    [],
     ["Height", heightFalseFloor],
     ["Volume Floor", floorVolume],
     [],
     ["FALSE CEILING"],
-    ["False Ceiling Present?", radioCeilingValue],
-    [],
     ["Height", heightFalseCeiling],
     ["Ceiling volume", ceilingVolume],
     [],
@@ -147,23 +119,11 @@ document.getElementById("demo").onclick = () => {
     [],
     ["Openings present", openings],
     ["Manual Sluice Volume", manuaVolumeSluice],
-    ["Surface Area", surfaceSluice],
-    ["Height", heightSluice],
-    ["Width Opening", widthOpening],
-    ["Height Opening", heightOpening],
     [],
-    ["EQUIPMENT ROOM"],
-    [],
-    ["Equipment room present?", radioEquipmentValue],
-    ["Length", lengthEquipment],
-    ["Width", widthEquipment],
-    ["Height", heightEquipment],
-    ["Temperature", tempEquipment],
     [],
     ["PROTECTED MATERIAL"],
     [],
     ["Protected material present?", radioStorageValue],
-    ["Volume", volumeStorage],
     ["Oxygen Content", oxyContentStorage],
   ];
 
